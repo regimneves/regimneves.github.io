@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="200" viewBox="0 46 680 200" role="img">
+<title>[SoftIA] logotipo - transparente (fundo escuro)</title>
+<defs>
+<style>@import url('https://fonts.googleapis.com/css2?family=Saira:wght@800&amp;family=Poppins:wght@500&amp;display=swap');</style>
+<linearGradient id="silverSmooth" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#D3DCEA"/><stop offset="1" stop-color="#A9B7CC"/>
+</linearGradient>
+<linearGradient id="goldSmooth" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FCE7A6"/><stop offset="0.5" stop-color="#E4B94D"/><stop offset="1" stop-color="#B7841D"/>
+</linearGradient>
+<radialGradient id="dawnGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#FFEAB6" stop-opacity="0.95"/><stop offset="0.45" stop-color="#F5C568" stop-opacity="0.4"/><stop offset="1" stop-color="#F0B24E" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<g id="lockup">
+<path id="brL" d="M170,92 L154,92 L154,170 L170,170" fill="none" stroke="url(#goldSmooth)" stroke-width="6.5" stroke-linecap="square"/>
+<path id="brR" d="M510,92 L526,92 L526,170 L510,170" fill="none" stroke="url(#goldSmooth)" stroke-width="6.5" stroke-linecap="square"/>
+<text id="softText" x="390" y="162" text-anchor="end" font-family="'Saira', sans-serif" font-weight="800" font-size="90" letter-spacing="-1" fill="url(#silverSmooth)">Soft</text>
+<rect x="406" y="97" width="19" height="65" rx="3" fill="url(#goldSmooth)"/>
+<text id="aText" x="436" y="162" text-anchor="start" font-family="'Saira', sans-serif" font-weight="800" font-size="90" letter-spacing="-1" fill="url(#goldSmooth)">A</text>
+<circle cx="415.5" cy="79" r="18" fill="url(#dawnGlow)"/>
+<circle cx="415.5" cy="79" r="9" fill="url(#goldSmooth)"/>
+<circle cx="412" cy="75.5" r="2.6" fill="#FFF8E2" opacity="0.9"/>
+</g>
+<line x1="300" y1="202" x2="380" y2="202" stroke="url(#goldSmooth)" stroke-width="1.4" stroke-opacity="0.8"/>
+<circle cx="340" cy="202" r="1.8" fill="#E4B94D"/>
+<text x="340" y="226" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="500" font-size="12.5" letter-spacing="6" fill="#AEBBD2">SOFTWARES INTELIGENTES</text>
+<script type="text/javascript">//<![CDATA[
+(function(){function L(){var s=document.getElementById('softText'),a=document.getElementById('aText');if(!s||!a)return;var sb=s.getBBox(),ab=a.getBBox();var top=92,bot=170,arm=16,pad=30;var lx=sb.x-pad,rx=ab.x+ab.width+pad;document.getElementById('brL').setAttribute('d','M'+(lx+arm)+','+top+' L'+lx+','+top+' L'+lx+','+bot+' L'+(lx+arm)+','+bot);document.getElementById('brR').setAttribute('d','M'+(rx-arm)+','+top+' L'+rx+','+top+' L'+rx+','+bot+' L'+(rx-arm)+','+bot);var c=(lx+rx)/2;document.getElementById('lockup').setAttribute('transform','translate('+(340-c)+',0)');}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(L);}L();setTimeout(L,250);setTimeout(L,800);})();
+//]]></script>
+</svg>

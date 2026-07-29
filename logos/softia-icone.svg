@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img">
+<title>[SoftIA] ícone</title>
+<defs>
+<linearGradient id="tileDark" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#12244C"/><stop offset="0.55" stop-color="#0B1A3C"/><stop offset="1" stop-color="#060E22"/>
+</linearGradient>
+<linearGradient id="goldSmooth" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FCE7A6"/><stop offset="0.5" stop-color="#E4B94D"/><stop offset="1" stop-color="#B7841D"/>
+</linearGradient>
+<radialGradient id="dawnGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#FFEAB6" stop-opacity="0.95"/><stop offset="0.45" stop-color="#F5C568" stop-opacity="0.45"/><stop offset="1" stop-color="#F0B24E" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="0" y="0" width="512" height="512" rx="112" fill="url(#tileDark)"/>
+<rect x="6" y="6" width="500" height="500" rx="107" fill="none" stroke="#D9AE4A" stroke-opacity="0.28" stroke-width="3"/>
+<ellipse cx="256" cy="180" rx="200" ry="120" fill="url(#dawnGlow)" opacity="0.18"/>
+<path d="M188,178 L150,178 L150,366 L188,366" fill="none" stroke="url(#goldSmooth)" stroke-width="22" stroke-linecap="square"/>
+<path d="M324,178 L362,178 L362,366 L324,366" fill="none" stroke="url(#goldSmooth)" stroke-width="22" stroke-linecap="square"/>
+<rect x="236" y="196" width="40" height="170" rx="8" fill="url(#goldSmooth)"/>
+<circle cx="256" cy="150" r="40" fill="url(#dawnGlow)"/>
+<circle cx="256" cy="150" r="21" fill="url(#goldSmooth)"/>
+<circle cx="248" cy="142" r="6" fill="#FFF8E2" opacity="0.9"/>
+</svg>

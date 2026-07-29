@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GymGest — Apresentação</title>
+<meta name="description" content="GymGest: a academia inteira num só programa. Preço fixo, alunos ilimitados, funciona offline.">
+<style>
+  :root{
+    --mata:#14231A; --mata2:#1C3122; --vivo:#52A82C; --verde:#3B7D1E; --vivo-on:#8FD75B;
+    --tint:#EAF6E2; --papel:#F6F9F3; --branco:#fff; --tinta:#14231A; --cinza:#566057;
+    --borda:#E4EBE1; --faint:#8A968B;
+    --crit:#B4402A; --crit-bg:#F5E2DD; --warn:#B7791F; --warn-bg:#F6ECD8;
+    --good:#2F855A; --good-bg:#E4F0EA;
+    --disp:'Bahnschrift','Archivo Narrow','Roboto Condensed',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --mono:'Consolas','SF Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{font-family:var(--sans);color:var(--tinta);background:var(--papel);-webkit-font-smoothing:antialiased}
+
+  .deck{scroll-snap-type:y mandatory;overflow-y:auto;height:100dvh}
+  .s{scroll-snap-align:start;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;
+     padding:clamp(24px,5vw,64px) clamp(20px,5vw,72px) clamp(64px,8vw,90px);position:relative;overflow:hidden}
+  .s.escuro{background:var(--mata);color:#fff}
+  .s.papel{background:var(--papel)}
+  .s.branco{background:var(--branco)}
+
+  .eyebrow{font-size:clamp(10px,1.6vw,12px);font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+           color:var(--verde);margin-bottom:14px}
+  .escuro .eyebrow{color:var(--vivo-on)}
+  h1{font-family:var(--disp);font-size:clamp(46px,10vw,104px);font-weight:700;line-height:.94;letter-spacing:-.01em}
+  h2{font-family:var(--disp);font-size:clamp(28px,5.6vw,54px);font-weight:700;line-height:1.02;
+     text-wrap:balance;margin-bottom:14px}
+  .lede{font-size:clamp(15px,2.1vw,19px);color:var(--cinza);max-width:62ch;line-height:1.5}
+  .escuro .lede{color:#A9BCA6}
+
+  .bolha{position:absolute;border-radius:50%;background:var(--mata2);pointer-events:none}
+
+  .grade{display:grid;gap:clamp(12px,1.6vw,20px);margin-top:clamp(22px,3.5vw,40px)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.g3,.g4{grid-template-columns:1fr}}
+
+  .card{background:var(--branco);border:1px solid var(--borda);border-radius:14px;
+        padding:clamp(14px,1.7vw,22px);box-shadow:0 8px 24px -18px rgba(20,35,26,.4)}
+  .card .n{width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--verde);
+           font-family:var(--disp);font-weight:700;font-size:15px;display:flex;align-items:center;
+           justify-content:center;margin-bottom:11px}
+  .card h3{font-size:clamp(14px,1.7vw,16.5px);font-weight:700;margin-bottom:5px}
+  .card p{font-size:clamp(12.5px,1.5vw,13.5px);color:var(--cinza);line-height:1.45}
+  .escuro .card{background:var(--mata2);border-color:#2A4030;color:#fff}
+  .escuro .card p{color:#A9BCA6}
+  .escuro .card .n{background:rgba(82,168,44,.2);color:var(--vivo-on)}
+
+  .duplo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px);align-items:center;
+         margin-top:clamp(18px,2.5vw,28px)}
+  @media(max-width:900px){.duplo{grid-template-columns:1fr;gap:26px}}
+  .checks{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:20px}
+  .checks li{display:flex;gap:11px;font-size:clamp(13.5px,1.7vw,15.5px);line-height:1.42}
+  .checks .tic{flex:0 0 24px;height:24px;border-radius:50%;background:var(--tint);color:var(--verde);
+               display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;margin-top:1px}
+  .checks b{font-weight:700}
+  .checks span{color:var(--cinza)}
+
+  /* janela simulando uma tela do sistema */
+  .win{background:var(--branco);border:1px solid var(--borda);border-radius:13px;overflow:hidden;
+       box-shadow:0 20px 44px -26px rgba(20,35,26,.5)}
+  .win .bar{background:var(--papel);border-bottom:1px solid var(--borda);padding:9px 13px;display:flex;
+            align-items:center;gap:7px;font-size:12.5px;font-weight:700}
+  .win .bar i{width:9px;height:9px;border-radius:50%;background:var(--borda);display:block}
+  .win .bar b{margin-left:7px}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 13px;
+       border-bottom:1px dashed var(--borda);font-size:clamp(12px,1.5vw,13.5px)}
+  .row:last-child{border-bottom:none}
+  .row .k{color:var(--cinza)}
+  .row .v{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+  .pill{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;
+        text-transform:uppercase;letter-spacing:.03em}
+  .p-crit{background:var(--crit-bg);color:var(--crit)}
+  .p-warn{background:var(--warn-bg);color:var(--warn)}
+  .p-good{background:var(--good-bg);color:var(--good)}
+  .v-good{color:var(--good)} .v-warn{color:var(--warn)} .v-crit{color:var(--crit)}
+
+  /* boneco do mapa muscular */
+  .corpo{background:var(--mata);border-radius:16px;padding:26px;text-align:center}
+  .corpo .t{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--vivo-on);text-transform:uppercase}
+  .fig{display:flex;justify-content:center;margin:20px 0 14px}
+  .leg{display:flex;flex-direction:column;gap:7px;align-items:flex-start;max-width:230px;margin:0 auto}
+  .leg div{display:flex;align-items:center;gap:9px;font-size:11.5px;color:#A9BCA6}
+  .leg i{width:15px;height:11px;border-radius:3px;display:block}
+
+  /* tabela comparativa */
+  .cmp{width:100%;border-collapse:collapse;margin-top:clamp(16px,2.4vw,26px);font-size:clamp(12px,1.6vw,14px)}
+  .cmp th,.cmp td{padding:clamp(9px,1.3vw,13px) 10px;text-align:left}
+  .cmp thead th{font-family:var(--disp);font-size:clamp(14px,2vw,18px);font-weight:700}
+  .cmp thead th:nth-child(2){background:var(--verde);color:#fff;text-align:center;border-radius:9px 9px 0 0}
+  .cmp thead th:nth-child(3){color:var(--faint);text-align:center}
+  .cmp tbody tr:nth-child(odd){background:var(--branco)}
+  .cmp td:first-child{font-weight:700}
+  .cmp td:nth-child(2){text-align:center;color:var(--verde);font-weight:700;background:rgba(82,168,44,.07)}
+  .cmp td:nth-child(3){text-align:center;color:var(--cinza)}
+  .nota{font-size:11.5px;color:var(--faint);font-style:italic;margin-top:14px}
+  .rolagem{overflow-x:auto}
+
+  /* preço */
+  .preco{background:var(--branco);border:2px solid var(--vivo);border-radius:18px;padding:clamp(20px,3vw,30px);
+         box-shadow:0 20px 44px -26px rgba(82,168,44,.6);position:relative}
+  .preco .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--vivo);color:#fff;
+              font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;
+              border-radius:999px;white-space:nowrap}
+  .preco .val{font-family:var(--disp);font-size:clamp(42px,7vw,62px);font-weight:700;line-height:1;margin:14px 0 6px}
+  .preco .sub{color:var(--verde);font-weight:700;font-size:clamp(13px,1.7vw,14.5px)}
+  .preco hr{border:none;border-top:1px solid var(--borda);margin:18px 0}
+  .preco .avista{font-weight:700;font-size:clamp(14px,1.9vw,16px)}
+  .preco .obs{color:var(--cinza);font-size:12.5px;margin-top:8px;line-height:1.45}
+
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  @media(max-width:760px){.passos{grid-template-columns:1fr}}
+  .zap{display:inline-flex;align-items:center;gap:10px;background:var(--vivo);color:#fff;font-weight:700;
+       font-size:clamp(15px,2vw,17px);padding:14px 26px;border-radius:999px;text-decoration:none;margin-top:26px}
+  .zap:hover{filter:brightness(1.08)}
+  .zap:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--vivo-on);outline-offset:3px}
+
+  /* navegação */
+  .num{position:absolute;left:clamp(20px,5vw,72px);bottom:clamp(22px,3.5vw,34px);font-family:var(--mono);
+       font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .marca{position:absolute;right:clamp(20px,5vw,72px);bottom:clamp(22px,3.5vw,34px);font-size:12px;color:var(--faint)}
+  .barra{position:fixed;top:0;left:0;height:3px;background:var(--vivo);width:0;z-index:20;transition:width .15s}
+  .setas{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;z-index:20}
+  .setas button{width:42px;height:42px;border-radius:50%;border:1px solid var(--borda);background:var(--branco);
+                color:var(--tinta);font-size:17px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(20,35,26,.5)}
+  .setas button:hover{background:var(--tint)}
+  @media(max-width:560px){.setas{display:none}}
+</style>
+</head>
+<body>
+
+<div class="barra" id="barra"></div>
+<div class="deck" id="deck">
+
+  <!-- 01 CAPA -->
+  <section class="s escuro">
+    <div class="bolha" style="width:min(58vw,520px);aspect-ratio:1;right:-12vw;top:-18vh"></div>
+    <div class="bolha" style="width:min(34vw,320px);aspect-ratio:1;right:-6vw;bottom:-14vh"></div>
+    <div style="position:relative">
+      <div class="eyebrow">SoftIA · Software de gestão</div>
+      <h1>GymGest</h1>
+      <div style="width:78px;height:4px;background:var(--vivo);margin:22px 0 20px"></div>
+      <p class="lede" style="font-size:clamp(16px,2.5vw,22px);color:#C2D3BF">
+        A academia inteira num só programa — e o preço não sobe quando você cresce.
+      </p>
+    </div>
+    <div class="num">01 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 02 PROBLEMA -->
+  <section class="s branco">
+    <div class="eyebrow">O desafio hoje</div>
+    <h2>A academia está cheia.<br>A gestão é que não acompanha.</h2>
+    <p class="lede">O treino acontece na sala. O prejuízo acontece no que ninguém controla.</p>
+    <div class="grade g3">
+      <div class="card"><div class="n">1</div><h3>Aluno some sem avisar</h3><p>Ele para de vir, ninguém percebe, e um mês depois já cancelou. Evasão é o maior custo da academia.</p></div>
+      <div class="card"><div class="n">2</div><h3>Mensalidade atrasada</h3><p>Sem saber quem deve, a cobrança vira constrangimento — ou nem acontece.</p></div>
+      <div class="card"><div class="n">3</div><h3>Ficha de treino no papel</h3><p>Perde, rasga, fica desatualizada. E o professor refaz do zero toda vez.</p></div>
+      <div class="card"><div class="n">4</div><h3>Avaliação esquecida</h3><p>Sem histórico e sem gráfico, o aluno não enxerga resultado — e resultado é o que renova.</p></div>
+      <div class="card"><div class="n">5</div><h3>Sistema que cobra por aluno</h3><p>Você cresce e a mensalidade do software cresce junto. Sucesso vira despesa.</p></div>
+      <div class="card"><div class="n">6</div><h3>Tudo em lugar diferente</h3><p>Caderno, planilha, WhatsApp e um programa que não conversa com nada.</p></div>
+    </div>
+    <div class="num">02 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 03 SOLUÇÃO -->
+  <section class="s papel">
+    <div class="eyebrow">A solução</div>
+    <h2>Um programa para a academia inteira.</h2>
+    <p class="lede">Instalado no computador da recepção. Funciona sem internet. Sem cobrança por aluno.</p>
+    <div class="grade g3">
+      <div class="card"><h3>Alunos &amp; funil</h3><p>Cadastro com foto, objetivo e anamnese PAR-Q. Do interessado ao matriculado.</p></div>
+      <div class="card"><h3>Planos &amp; matrículas</h3><p>Modalidades, plano simples ou combo, cobrança automática e contrato em PDF.</p></div>
+      <div class="card"><h3>Frequência &amp; check-in</h3><p>Busca pelo nome, check-in em um clique e análise de horários de pico.</p></div>
+      <div class="card"><h3>Treino com mapa muscular</h3><p>Monte a ficha clicando no músculo. O corpo acende o que foi trabalhado.</p></div>
+      <div class="card"><h3>Avaliação física</h3><p>Dobras cutâneas, % de gordura, gráfico de evolução e fotos antes/depois.</p></div>
+      <div class="card"><h3>Agenda de aulas</h3><p>Grade semanal, reserva de vaga e presença que já vira frequência.</p></div>
+      <div class="card"><h3>Financeiro</h3><p>Mensalidades, inadimplência, fluxo de caixa e recibo em PDF.</p></div>
+      <div class="card"><h3>WhatsApp &amp; régua</h3><p>Inbox com áudio e contato automático de aniversário, vencimento e ausência.</p></div>
+      <div class="card"><h3>IA &amp; painel do dono</h3><p>Treino, previsão de evasão e ponto de equilíbrio do negócio.</p></div>
+    </div>
+    <div class="num">03 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 04 MAPA MUSCULAR -->
+  <section class="s branco">
+    <div class="eyebrow">O diferencial</div>
+    <h2>O treino que o aluno entende.</h2>
+    <div class="duplo">
+      <div>
+        <p class="lede">Você clica no músculo e monta a ficha. O corpo acende o que aquele treino trabalha — dá para ver na hora se ficou desequilibrado. E a IA sugere o treino conforme o objetivo do aluno.</p>
+        <ul class="checks">
+          <li><span class="tic">✓</span><div><b>Mapa masculino e feminino</b> <span>— o boneco segue o sexo do aluno.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Biblioteca de exercícios</b> <span>— com imagem ou GIF de execução.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Sugestão por IA</b> <span>— treino, orientação regenerativa e alimentar.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Ficha em PDF</b> <span>— com o mapa impresso e o histórico da semana.</span></div></li>
+        </ul>
+      </div>
+      <div class="corpo">
+        <div class="t">Ficha de treino · Treino A</div>
+        <div class="fig">
+          <svg width="150" height="230" viewBox="0 0 150 230" role="img" aria-label="Silhueta com peito, braços e abdômen destacados">
+            <ellipse cx="75" cy="20" rx="16" ry="18" fill="#2E4433"/>
+            <rect x="52" y="42" width="46" height="40" rx="9" fill="#52A82C"/>
+            <rect x="55" y="85" width="40" height="35" rx="8" fill="#7FC24F"/>
+            <rect x="33" y="46" width="15" height="40" rx="7" fill="#52A82C"/>
+            <rect x="102" y="46" width="15" height="40" rx="7" fill="#52A82C"/>
+            <rect x="56" y="124" width="18" height="52" rx="8" fill="#2E4433"/>
+            <rect x="78" y="124" width="18" height="52" rx="8" fill="#2E4433"/>
+            <rect x="58" y="180" width="14" height="38" rx="6" fill="#2E4433"/>
+            <rect x="80" y="180" width="14" height="38" rx="6" fill="#2E4433"/>
+          </svg>
+        </div>
+        <div class="leg">
+          <div><i style="background:#52A82C"></i> Peito · Bíceps · Tríceps</div>
+          <div><i style="background:#7FC24F"></i> Abdômen</div>
+          <div><i style="background:#2E4433"></i> Não trabalhado hoje</div>
+        </div>
+      </div>
+    </div>
+    <div class="num">04 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 05 AVALIAÇÃO -->
+  <section class="s papel">
+    <div class="eyebrow">Retenção começa aqui</div>
+    <h2>Resultado que o aluno vê é matrícula que renova.</h2>
+    <div class="duplo">
+      <div>
+        <p class="lede">Sem prova de evolução, o aluno acha que não está funcionando — e cancela. O GymGest transforma a avaliação física num argumento de renovação.</p>
+        <ul class="checks">
+          <li><span class="tic">✓</span><div><b>Dobras cutâneas (Pollock)</b> <span>— % de gordura calculado na hora, por sexo.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Medidas e IMC</b> <span>— histórico completo, sem planilha.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Gráfico de evolução</b> <span>— o progresso mês a mês, numa linha só.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Fotos antes / depois</b> <span>— lado a lado, direto na ficha.</span></div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><b>Avaliação · Carlos Eduardo</b></div>
+          <div class="row"><span class="k">Peso</span><span class="v v-good">83 → 78 kg</span></div>
+          <div class="row"><span class="k">% de gordura</span><span class="v v-good">16,1% → 10,7%</span></div>
+          <div class="row"><span class="k">Cintura</span><span class="v v-good">85,7 → 80,3 cm</span></div>
+          <div class="row"><span class="k">IMC</span><span class="v">25,6 → 24,1</span></div>
+          <div class="row"><span class="k">Situação</span><span class="pill p-good">Evoluindo</span></div>
+        </div>
+        <div style="background:var(--tint);border-radius:12px;padding:15px 18px;margin-top:16px;color:var(--verde);font-weight:700;font-size:13.5px;line-height:1.45">
+          “Em 4 meses: −5 kg e −5,4% de gordura.”<br>É esse print que o aluno manda para os amigos.
+        </div>
+      </div>
+    </div>
+    <div class="num">05 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 06 EVASÃO -->
+  <section class="s branco">
+    <div class="eyebrow">O dinheiro que escorre</div>
+    <h2>Segurar aluno custa menos que conquistar aluno.</h2>
+    <p class="lede">O sistema avisa quem está sumindo antes de o cancelamento acontecer — e já entrega a mensagem pronta.</p>
+    <div class="duplo">
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><b>Alunos em risco de evasão</b></div>
+        <div class="row"><span class="k">Ana Paula · sem treinar há 19 dias</span><span class="pill p-crit">Risco alto</span></div>
+        <div class="row"><span class="k">Rodrigo M. · frequência caiu 60%</span><span class="pill p-crit">Risco alto</span></div>
+        <div class="row"><span class="k">Juliana S. · plano vence em 4 dias</span><span class="pill p-warn">Atenção</span></div>
+        <div class="row"><span class="k">Carlos E. · treinando 4x/semana</span><span class="pill p-good">Saudável</span></div>
+      </div>
+      <div class="grade" style="margin-top:0">
+        <div class="card"><h3>Régua automática</h3><p>Aniversário, vencimento e aluno ausente viram contato pronto. Você confere e envia.</p></div>
+        <div class="card"><h3>WhatsApp com áudio</h3><p>Mensagem de voz direto do sistema — pessoal, do jeito que o aluno responde.</p></div>
+        <div class="card"><h3>A IA sugere a abordagem</h3><p>Para cada perfil de risco, uma estratégia de retenção diferente.</p></div>
+      </div>
+    </div>
+    <div class="num">06 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 07 FINANCEIRO -->
+  <section class="s papel">
+    <div class="eyebrow">Caixa no controle</div>
+    <h2>Você sabe exatamente quem pagou e quem deve.</h2>
+    <div class="duplo">
+      <div>
+        <p class="lede">A matrícula já lança a cobrança sozinha. Nada de anotar mensalidade em caderno e descobrir o buraco no fim do mês.</p>
+        <ul class="checks">
+          <li><span class="tic">✓</span><div><b>Cobrança automática</b> <span>— matriculou, já entrou no contas a receber.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Inadimplência à vista</b> <span>— quem está devendo, há quantos dias.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Recibo e contrato em PDF</b> <span>— em um clique, prontos para assinar.</span></div></li>
+          <li><span class="tic">✓</span><div><b>Fluxo de caixa</b> <span>— entradas, saídas e relatório em PDF/Excel.</span></div></li>
+        </ul>
+      </div>
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><b>Financeiro · Julho</b></div>
+        <div class="row"><span class="k">Receita do mês</span><span class="v v-good">R$ 5.316,60</span></div>
+        <div class="row"><span class="k">Despesas</span><span class="v">R$ 2.942,00</span></div>
+        <div class="row"><span class="k">Resultado</span><span class="v v-good">R$ 2.374,60</span></div>
+        <div class="row"><span class="k">A receber (em aberto)</span><span class="v v-warn">R$ 3.288,00</span></div>
+        <div class="row"><span class="k">Alunos inadimplentes</span><span class="v v-crit">15</span></div>
+      </div>
+    </div>
+    <div class="num">07 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 08 IA -->
+  <section class="s escuro">
+    <div class="bolha" style="width:min(46vw,440px);aspect-ratio:1;right:-10vw;top:-14vh"></div>
+    <div style="position:relative">
+      <div class="eyebrow">Inteligência artificial</div>
+      <h2>Uma consultoria dentro do seu programa.</h2>
+      <p class="lede">Não é enfeite: a IA lê os números reais da sua academia e responde o que o dono precisa decidir.</p>
+      <div class="grade g4">
+        <div class="card"><h3>Monta o treino</h3><p>Sugere exercícios pelo objetivo do aluno, com orientação regenerativa e alimentar.</p></div>
+        <div class="card"><h3>Prevê a evasão</h3><p>Cruza frequência e vencimento para apontar quem está prestes a sair.</p></div>
+        <div class="card"><h3>Cuida do caixa</h3><p>Ponto de equilíbrio, tendência de receita e custo, e quantos alunos faltam.</p></div>
+        <div class="card"><h3>Responde por voz</h3><p>Pergunte pelo microfone. Use a IA que preferir: Claude, GPT ou Gemini.</p></div>
+      </div>
+      <div style="background:#1F3626;border-radius:13px;padding:18px 22px;margin-top:22px;font-size:clamp(13px,1.8vw,15px);line-height:1.5;color:#D6E4D2">
+        <b style="color:var(--vivo-on)">Saúde do Negócio:</b>
+        “Com o custo fixo atual, você precisa de 19 alunos ativos para se pagar. Hoje você tem 38 — e 15 inadimplentes.”
+      </div>
+    </div>
+    <div class="num">08 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 09 OFFLINE -->
+  <section class="s branco">
+    <div class="eyebrow">Independência</div>
+    <h2>Caiu a internet? A academia não para.</h2>
+    <p class="lede">O GymGest fica instalado no computador da recepção — não é um site que depende da conexão para funcionar.</p>
+    <div class="grade g4">
+      <div class="card"><h3>Roda offline</h3><p>Cadastro, check-in, treino, avaliação e financeiro funcionam sem internet. Só WhatsApp, e-mail e IA precisam de conexão.</p></div>
+      <div class="card"><h3>Seus dados são seus</h3><p>Ficam no seu computador, num arquivo seu. Não estão na nuvem de ninguém.</p></div>
+      <div class="card"><h3>Rápido de verdade</h3><p>Sem tela girando esperando servidor. A recepção não trava na hora do pico.</p></div>
+      <div class="card"><h3>Backup na sua mão</h3><p>Rotina de backup no próprio sistema — e você guarda a cópia onde quiser.</p></div>
+    </div>
+    <div style="background:var(--tint);border-radius:12px;padding:16px 20px;margin-top:20px;color:var(--verde);font-weight:700;font-size:clamp(13px,1.8vw,15px)">
+      Se um dia você parar de usar o GymGest, seus dados continuam sendo seus — eles nunca estiveram com outra pessoa.
+    </div>
+    <div class="num">09 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 10 COMPARATIVO -->
+  <section class="s papel">
+    <div class="eyebrow">Comparativo</div>
+    <h2>GymGest x sistemas que cobram por aluno.</h2>
+    <p class="lede">A conta muda de figura quando a sua academia cresce.</p>
+    <div class="rolagem">
+      <table class="cmp">
+        <thead><tr><th></th><th>GymGest</th><th>Sistema por mensalidade</th></tr></thead>
+        <tbody>
+          <tr><td>Como cobra</td><td>Licença anual fixa</td><td>Mensalidade por faixa de alunos</td></tr>
+          <tr><td>Cresceu de 100 para 300 alunos</td><td>Paga o mesmo</td><td>Paga mais — muda de plano</td></tr>
+          <tr><td>Custo em 3 anos (estimativa)</td><td>R$ 2.700</td><td>R$ 10.800 a R$ 43.200</td></tr>
+          <tr><td>Funciona sem internet</td><td>Sim</td><td>Não</td></tr>
+          <tr><td>Onde ficam seus dados</td><td>No seu computador</td><td>Na nuvem do fornecedor</td></tr>
+          <tr><td>Mapa muscular na ficha</td><td>Sim</td><td>Raro</td></tr>
+          <tr><td>IA de treino, evasão e caixa</td><td>Incluída</td><td>Limitada ou paga à parte</td></tr>
+          <tr><td>Fala com quem desenvolveu</td><td>Sim, direto no WhatsApp</td><td>Central de atendimento</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota">Estimativa baseada em faixas de preço praticadas no mercado; o valor exato varia por fornecedor e número de alunos.</p>
+    <div class="num">10 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 11 PREÇO -->
+  <section class="s branco">
+    <div class="eyebrow">Investimento</div>
+    <h2>Um preço. Alunos ilimitados.</h2>
+    <p class="lede">Licença anual com todos os recursos e as atualizações incluídas. Com 30 ou 3.000 alunos, o valor é o mesmo.</p>
+    <div class="duplo">
+      <div class="preco">
+        <span class="tag">Licença anual</span>
+        <h3 style="font-size:15px;font-weight:700;margin-top:6px">GymGest completo</h3>
+        <div class="val">12x R$ 75</div>
+        <div class="sub">R$ 900 por ano · alunos ilimitados</div>
+        <hr>
+        <div class="avista">ou <span style="color:var(--verde)">R$ 790 à vista</span> no primeiro ano</div>
+        <p class="obs">Sem cobrança por aluno · sem taxa de instalação · atualizações incluídas</p>
+      </div>
+      <div>
+        <h3 style="font-size:clamp(15px,2vw,17px);font-weight:700;margin-bottom:14px">Tudo isto está incluso</h3>
+        <ul class="checks" style="margin-top:0">
+          <li><span class="tic">✓</span><div>Alunos, planos, modalidades e matrículas</div></li>
+          <li><span class="tic">✓</span><div>Frequência, check-in e agenda de aulas</div></li>
+          <li><span class="tic">✓</span><div>Treinos com mapa muscular e ficha em PDF</div></li>
+          <li><span class="tic">✓</span><div>Avaliação física com dobras e evolução</div></li>
+          <li><span class="tic">✓</span><div>Financeiro, inadimplência, recibo e contrato</div></li>
+          <li><span class="tic">✓</span><div>WhatsApp com áudio e régua de contato</div></li>
+          <li><span class="tic">✓</span><div>IA de treino, evasão e saúde do negócio</div></li>
+          <li><span class="tic">✓</span><div>Relatórios, backup e suporte no WhatsApp</div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="num">11 / 12</div><div class="marca">GymGest · SoftIA</div>
+  </section>
+
+  <!-- 12 PRÓXIMO PASSO -->
+  <section class="s escuro">
+    <div class="bolha" style="width:min(50vw,480px);aspect-ratio:1;right:-12vw;top:-16vh"></div>
+    <div style="position:relative">
+      <div class="eyebrow">Próximo passo</div>
+      <h2 style="font-size:clamp(30px,6vw,58px)">Vamos ver funcionando com os dados da sua academia?</h2>
+      <p class="lede">A demonstração é sem compromisso e leva cerca de 20 minutos. Se fizer sentido, a instalação é no mesmo dia.</p>
+      <div class="passos">
+        <div class="card"><div class="n">1</div><h3>Demonstração</h3><p>Mostramos o sistema rodando e tiramos todas as dúvidas.</p></div>
+        <div class="card"><div class="n">2</div><h3>Instalação</h3><p>Instalamos no computador da recepção e configuramos com você.</p></div>
+        <div class="card"><div class="n">3</div><h3>Primeiros cadastros</h3><p>Ajudamos a cadastrar planos e os primeiros alunos.</p></div>
+      </div>
+      <a class="zap" href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20do%20GymGest%20e%20quero%20conhecer.">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
+        WhatsApp (34) 98408-1020
+      </a>
+    </div>
+    <div class="num">12 / 12</div><div class="marca">GymGest · um produto SoftIA</div>
+  </section>
+
+</div>
+
+<div class="setas">
+  <button id="ant" aria-label="Slide anterior">↑</button>
+  <button id="prox" aria-label="Próximo slide">↓</button>
+</div>
+
+<script>
+  const deck = document.getElementById('deck');
+  const slides = [...deck.querySelectorAll('.s')];
+  const barra = document.getElementById('barra');
+
+  function atual(){
+    let i = 0, menor = Infinity;
+    slides.forEach((s, k) => {
+      const d = Math.abs(s.getBoundingClientRect().top);
+      if (d < menor) { menor = d; i = k; }
+    });
+    return i;
+  }
+  function ir(n){
+    const i = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].scrollIntoView({ behavior: 'smooth' });
+  }
+  deck.addEventListener('scroll', () => {
+    barra.style.width = (deck.scrollTop / (deck.scrollHeight - deck.clientHeight) * 100) + '%';
+  }, { passive: true });
+  document.getElementById('prox').onclick = () => ir(atual() + 1);
+  document.getElementById('ant').onclick  = () => ir(atual() - 1);
+  addEventListener('keydown', e => {
+    if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); ir(atual() + 1); }
+    if (['ArrowUp','PageUp'].includes(e.key))         { e.preventDefault(); ir(atual() - 1); }
+    if (e.key === 'Home') ir(0);
+    if (e.key === 'End')  ir(slides.length - 1);
+  });
+</script>
+</body>
+</html>
