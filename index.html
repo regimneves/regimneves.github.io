@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoftIA — Softwares Inteligentes para o seu negócio</title>
-<meta name="description" content="SoftIA desenvolve sistemas de gestão sob medida, com inteligência artificial. Conheça o AquaGest (lojas de piscina) e o GymGest (academias e estúdios).">
+<meta name="description" content="SoftIA desenvolve sistemas de gestão sob medida, com inteligência artificial. Conheça o AquaGest (lojas de piscina), o GymGest (academias e estúdios) e o FitGest (moda fitness em consignação).">
 <meta property="og:title" content="SoftIA — Softwares Inteligentes">
-<meta property="og:description" content="Sistemas de gestão sob medida, com IA. AquaGest para lojas de piscina e GymGest para academias.">
+<meta property="og:description" content="Sistemas de gestão sob medida, com IA. AquaGest para lojas de piscina, GymGest para academias e FitGest para moda fitness em consignação.">
 <meta property="og:type" content="website">
 <link rel="icon" href="logos/softia-icone.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,7 @@
 
   --aqua:#0EA5E9; --aqua-esc:#0369A1;
   --gym:#0EA085; --gym-esc:#0A7D68;
+  --fit:#E31859; --fit-esc:#B60F46;
 
   --radius:18px;
   --sombra:0 1px 2px rgba(10,22,48,.04), 0 12px 30px -18px rgba(10,22,48,.28);
@@ -123,6 +124,7 @@ section{padding:74px 0}
 .prod:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 45%,var(--linha));box-shadow:0 24px 50px -26px color-mix(in srgb,var(--c) 60%, transparent)}
 .prod::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--c),var(--c2))}
 .prod.gym{--c:var(--gym);--c2:var(--gym-esc)}
+.prod.fit{--c:var(--fit);--c2:var(--fit-esc)}
 .prod .badge{display:inline-flex;align-items:center;gap:9px;font-family:'Saira';font-weight:700;letter-spacing:.3px;font-size:13px;
   color:var(--c2);background:color-mix(in srgb,var(--c) 14%, var(--surface));padding:7px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 30%, transparent)}
 :root[data-theme="dark"] .prod .badge, .prod .badge{}
@@ -253,6 +255,27 @@ footer .fim{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,2
             <a class="link-sec" href="gymgest/apresentacao.html">Ver apresentação</a>
           </div>
         </article>
+
+        <!-- FitGest -->
+        <article class="prod fit">
+          <span class="badge"><span class="ico" style="width:auto;height:auto;border:0;background:none;font-size:15px">👟</span> Moda fitness em consignação</span>
+          <div class="ico" style="margin-top:16px">👟</div>
+          <h3>FitGest</h3>
+          <div class="tag">Gestão completa para moda fitness em consignação.</div>
+          <p class="desc">Parceiras, peças consignadas e acerto com comissão calculados sozinhos — com WhatsApp e IA que escrevem as suas mensagens e leem o seu negócio.</p>
+          <ul>
+            <li>Parceiras e consignação</li>
+            <li>Acerto e comissão automáticos</li>
+            <li>Estoque, PDV e vendas</li>
+            <li>WhatsApp e financeiro</li>
+            <li>Relatórios e BI</li>
+            <li>Assistente de IA</li>
+          </ul>
+          <div class="acoes">
+            <a class="btn btn-prod" href="fitgest/">Ver o FitGest →</a>
+            <a class="link-sec" href="https://github.com/regimneves/fitgest-releases/releases/latest">Baixar (14 dias grátis)</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -307,6 +330,7 @@ footer .fim{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,2
       <div style="display:flex;gap:22px;flex-wrap:wrap">
         <a href="aquagest/">AquaGest</a>
         <a href="gymgest/">GymGest</a>
+        <a href="fitgest/">FitGest</a>
         <a href="https://wa.me/5534984081020">WhatsApp: +55 34 98408-1020</a>
       </div>
     </div>

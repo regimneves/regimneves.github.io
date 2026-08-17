@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FitGest — Sistema de Gestão para Moda Fitness em Consignação</title>
+<meta name="description" content="FitGest: parceiras, consignação, acerto automático, estoque, PDV, financeiro, WhatsApp e IA — para distribuidores de moda fitness. Offline, licença anual de preço fixo. Teste grátis por 14 dias." />
+<link rel="icon" href="../logos/softia-icone.svg" type="image/svg+xml">
+
+<!-- ==== SEO ==== -->
+<link rel="canonical" href="https://regimneves.github.io/fitgest/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="Softia" />
+<meta name="keywords" content="sistema para consignação de roupas, software para distribuidor de moda fitness, controle de consignação, gestão de revendedoras, acerto de consignado, sistema para moda fitness, programa de estoque de roupas, gestão de consignação com IA, software para consultoras de moda, sistema para revenda de roupa fitness" />
+<meta name="theme-color" content="#E31859" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="FitGest" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://regimneves.github.io/fitgest/" />
+<meta property="og:title" content="FitGest — Gestão para Moda Fitness em Consignação (com IA)" />
+<meta property="og:description" content="Parceiras, consignação, acerto automático, estoque, PDV, financeiro, WhatsApp e IA para distribuidores de moda fitness. Offline, preço fixo anual. Teste grátis por 14 dias." />
+
+<!-- Dados estruturados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FitGest",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Sistema de gestão para moda fitness em consignação",
+  "operatingSystem": "Windows",
+  "url": "https://regimneves.github.io/fitgest/",
+  "description": "Software de gestão para distribuidores de moda fitness que trabalham em consignação. Controla parceiras/consultoras, peças consignadas, acerto e comissão automáticos, estoque, PDV, financeiro e WhatsApp, com inteligência artificial que escreve mensagens, lê o negócio e gera marketing. Funciona offline, com os dados no computador do próprio cliente.",
+  "inLanguage": "pt-BR",
+  "featureList": [
+    "Cadastro de parceiras/consultoras e clientes",
+    "Consignação: o que saiu, o que vendeu, o que deve",
+    "Acerto e comissão automáticos (atacado + margem)",
+    "Estoque, fábricas e entrada por planilha/IA",
+    "PDV e vendas",
+    "Financeiro: contas a pagar/receber e fluxo de caixa",
+    "WhatsApp integrado com histórico por cliente",
+    "Inteligência artificial para mensagens, análise e marketing",
+    "Dashboard e relatórios em PDF/Excel",
+    "Funciona offline com backup"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "description": "Licença anual. Teste grátis por 14 dias, com instalação e treinamento inclusos.",
+    "availability": "https://schema.org/InStock",
+    "url": "https://regimneves.github.io/fitgest/"
+  },
+  "brand": { "@type": "Brand", "name": "Softia" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Softia",
+    "url": "https://regimneves.github.io/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+55-34-98408-1020",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "O FitGest controla consignação?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, é o coração do sistema. Você registra o que saiu para cada parceira/consultora, o sistema acompanha o que vendeu e o que ainda está em poder dela, e o acerto sai calculado — com a comissão já descontada." } },
+    { "@type": "Question", "name": "O acerto e a comissão são calculados sozinhos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O FitGest calcula o acerto pelo preço de venda e o lucro pela regra de atacado + margem, e aplica a comissão da consultora automaticamente. Acabou a conta de cabeça no papel." } },
+    { "@type": "Question", "name": "Preciso de internet para usar o FitGest?", "acceptedAnswer": { "@type": "Answer", "text": "Não para o dia a dia. O FitGest é instalado no computador e funciona offline: cadastro, consignação, acerto, estoque, PDV e financeiro funcionam sem internet. A internet só é necessária para WhatsApp, IA e baixar atualizações." } },
+    { "@type": "Question", "name": "Onde ficam os meus dados?", "acceptedAnswer": { "@type": "Answer", "text": "No seu próprio computador, num arquivo só seu — não ficam na nuvem de ninguém. O sistema tem rotina de backup e recomenda-se guardar uma cópia em pen drive ou nuvem de sua preferência." } },
+    { "@type": "Question", "name": "Como funciona o teste grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Você baixa e instala o FitGest e usa por 14 dias sem pagar nada, com todos os recursos. Se gostar, é só ativar a licença — seus dados do período de teste continuam." } },
+    { "@type": "Question", "name": "O WhatsApp integrado pode derrubar meu número?", "acceptedAnswer": { "@type": "Answer", "text": "O envio é feito pelo seu próprio WhatsApp, com intervalo entre mensagens e proteção contra disparo em rajada, para reduzir o risco de bloqueio. A regra de ouro é falar com quem já é seu cliente e quer ouvir você." } }
+  ]
+}
+</script>
+<!-- ==== fim SEO ==== -->
+
+<style>
+  :root{
+    --rosa:#E31859; --rosa-esc:#B60F46; --rosa-claro:#FCE1EA;
+    --tinta:#1C1420; --cinza:#6B5F70; --borda:#EADFE4;
+    --papel:#FBF5F7; --branco:#ffffff; --zap:#25D366; --lima:#7A9E00;
+    --sombra:0 1px 2px rgba(28,20,32,.05), 0 8px 24px -12px rgba(28,20,32,.16);
+    --bgpage:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2C1420; --bgpage:#140E1A; --rosa:#FF3D74; --rosa-esc:#FF6E97; }
+  }
+  :root[data-theme="dark"]{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2C1420; --bgpage:#140E1A; --rosa:#FF3D74; --rosa-esc:#FF6E97; }
+  :root[data-theme="light"]{ --tinta:#1C1420; --cinza:#6B5F70; --borda:#EADFE4; --papel:#FBF5F7; --branco:#ffffff; --rosa-claro:#FCE1EA; --bgpage:#ffffff; --rosa:#E31859; --rosa-esc:#B60F46; }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--bgpage);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rosa-esc)}
+  h1,h2,h3{text-wrap:balance;letter-spacing:-.02em;line-height:1.08}
+  .num{font-variant-numeric:tabular-nums}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:12px;padding:15px 26px;font-size:16px;font-weight:800;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-rosa{background:var(--rosa);color:#fff;box-shadow:0 8px 20px -8px rgba(227,24,89,.6)}
+  .btn-zap{background:var(--zap);color:#fff}
+  .btn-ghost{background:transparent;color:var(--tinta);border:1.5px solid var(--borda)}
+  .btn svg{width:20px;height:20px}
+
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bgpage) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900;letter-spacing:-.02em}
+  .logo .mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(150deg,#FF5C86,var(--rosa-esc));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:19px;transform:rotate(-6deg)}
+  .logo small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--cinza);text-transform:uppercase}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:14.5px;font-weight:600;color:var(--cinza)}
+  .nav-links a:hover{color:var(--rosa-esc)}
+  @media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+  .hero{position:relative;overflow:hidden;background:radial-gradient(1100px 480px at 50% -8%, var(--rosa-claro), transparent 70%)}
+  .hero .wrap{padding:70px 22px 60px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,60px);font-weight:900;margin:18px auto 16px;max-width:15ch}
+  .hero h1 .g{background:linear-gradient(120deg,var(--rosa),var(--rosa-esc));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-size:clamp(16px,2.2vw,20px);color:var(--cinza);max-width:620px;margin:0 auto 30px}
+  .acoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .trial-note{margin-top:14px;font-size:13.5px;color:var(--cinza)}
+  .trial-note b{color:var(--rosa-esc)}
+  .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--branco);border:1px solid var(--borda);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700;box-shadow:var(--sombra)}
+  .chip b{color:var(--rosa-esc)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--rosa)}
+
+  section.blk{padding:72px 0}
+  .lead{max-width:640px;margin-bottom:38px}
+  .lead h2{font-size:clamp(26px,4vw,38px);font-weight:900;margin:10px 0 12px}
+  .lead p{color:var(--cinza);font-size:17px}
+
+  .porque{background:var(--papel);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.tri{grid-template-columns:1fr}}
+  .tri .card{background:var(--branco);border:1px solid var(--borda);border-radius:18px;padding:26px}
+  .tri .ic{width:46px;height:46px;border-radius:13px;background:var(--rosa-claro);display:flex;align-items:center;justify-content:center;color:var(--rosa-esc);margin-bottom:16px}
+  .tri .ic svg{width:24px;height:24px}
+  .tri h3{font-size:20px;font-weight:800;margin-bottom:8px}
+  .tri p{color:var(--cinza);font-size:15px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .feat{border:1px solid var(--borda);border-radius:16px;padding:20px;background:var(--branco);transition:border-color .15s, transform .15s}
+  .feat:hover{border-color:var(--rosa);transform:translateY(-2px)}
+  .feat .t{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;margin-bottom:7px}
+  .feat .t .b{width:30px;height:30px;border-radius:9px;background:var(--rosa-claro);display:flex;align-items:center;justify-content:center;color:var(--rosa-esc);flex-shrink:0}
+  .feat .t .b svg{width:17px;height:17px}
+  .feat p{color:var(--cinza);font-size:14px}
+
+  .ia{background:linear-gradient(160deg,#2A0E1C,#1C1420);color:#F7DDE7}
+  .ia .eyebrow{color:#FF8FB0}
+  .ia h2{color:#fff;font-size:clamp(26px,4vw,38px);font-weight:900;margin:10px 0 26px;max-width:16ch}
+  .ia-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:760px){.ia-grid{grid-template-columns:1fr}}
+  .ia-item{background:#ffffff0a;border:1px solid #ffffff1f;border-radius:14px;padding:18px 20px}
+  .ia-item b{color:#FF8FB0;font-size:15.5px}
+  .ia-item p{color:#D8C2CC;font-size:14.5px;margin-top:5px}
+
+  .cmp{border:1px solid var(--borda);border-radius:18px;overflow-x:auto;box-shadow:var(--sombra)}
+  .cmp table{width:100%;border-collapse:collapse;font-size:15px;min-width:440px}
+  .cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--borda)}
+  .cmp thead th{background:var(--papel);font-weight:800;font-size:13.5px}
+  .cmp thead th:nth-child(2){color:var(--rosa-esc)}
+  .cmp .yes{color:var(--rosa-esc);font-weight:800}
+  .cmp .no{color:#9A6B76;font-weight:700}
+  .cmp td:first-child{color:var(--cinza)}
+  .cmp tr:last-child td{border-bottom:none}
+
+  .plano{border:1px solid var(--borda);border-radius:20px;padding:28px 24px;background:var(--branco)}
+  .plano.dest{border:2px solid var(--rosa);position:relative;box-shadow:0 16px 40px -20px rgba(227,24,89,.5)}
+  .plano.dest .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--rosa);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+  .plano h3{font-size:19px;font-weight:800}
+  .plano .preco{font-size:40px;font-weight:900;margin:12px 0 2px;letter-spacing:-.03em}
+  .plano .unica{font-size:13px;color:var(--rosa-esc);font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+  .plano ul{list-style:none;margin:20px 0 22px;display:flex;flex-direction:column;gap:10px}
+  .plano li{display:flex;gap:9px;font-size:14.5px;align-items:flex-start}
+  .plano li svg{width:18px;height:18px;color:var(--rosa);flex-shrink:0;margin-top:1px}
+  .plano .btn{width:100%;justify-content:center}
+
+  .cta{background:linear-gradient(150deg,var(--rosa),var(--rosa-esc));color:#fff;text-align:center}
+  .cta h2{font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:14px;color:#fff}
+  .cta p{opacity:.94;font-size:18px;max-width:540px;margin:0 auto 28px}
+
+  footer{background:var(--papel);border-top:1px solid var(--borda);padding:36px 0;color:var(--cinza);font-size:13.5px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .foot .sol{color:var(--rosa-esc);font-weight:800}
+  .foot a:hover{color:var(--rosa-esc)}
+
+  /* --- WhatsApp mock --- */
+  .zapwrap{display:grid;gap:38px;grid-template-columns:1fr 1fr;align-items:center}
+  @media(max-width:860px){.zapwrap{grid-template-columns:1fr}}
+  .fone{max-width:330px;margin:0 auto;border:9px solid #14201d;border-radius:34px;overflow:hidden;background:#E5DDD5;box-shadow:0 24px 50px -22px rgba(28,20,32,.55)}
+  :root[data-theme="dark"] .fone{background:#0d1a17}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .fone{background:#0d1a17}}
+  .fone .topo{background:#075E54;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+  .fone .av{width:34px;height:34px;border-radius:50%;background:#E31859;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;color:#fff}
+  .fone .topo b{font-size:14.5px;display:block;line-height:1.2}
+  .fone .topo span{font-size:11.5px;opacity:.8}
+  .chat{padding:14px 12px;display:flex;flex-direction:column;gap:9px}
+  .bal{max-width:84%;padding:8px 11px;border-radius:9px;font-size:13.2px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.13);position:relative}
+  .bal.out{align-self:flex-end;background:#DCF8C6;color:#101a12;border-top-right-radius:2px}
+  .bal.in{align-self:flex-start;background:#fff;color:#101a12;border-top-left-radius:2px}
+  .bal .hora{font-size:10px;color:#6b7a6b;float:right;margin:6px 0 -2px 10px}
+  .selo-ia{display:inline-flex;align-items:center;gap:5px;background:#FCE1EA;color:#B60F46;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+  .nota-ex{text-align:center;font-size:12px;color:var(--cinza);margin-top:14px;font-style:italic}
+
+  /* --- FAQ --- */
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .faq details{border:1px solid var(--borda);border-radius:14px;background:var(--branco);overflow:hidden}
+  .faq summary{cursor:pointer;padding:17px 20px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--rosa);font-size:22px;font-weight:800;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details[open] summary{border-bottom:1px solid var(--borda)}
+  .faq .resp{padding:16px 20px 20px;color:var(--cinza);font-size:15px}
+  .faq .resp b{color:var(--tinta)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">
+      <span class="mark">F</span>
+      <span>FitGest<small>por SoftIA</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#consignacao">Consignação</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#ia">Inteligência</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#baixar" class="btn btn-rosa" style="padding:10px 18px;font-size:14px">Testar grátis</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Gestão para moda fitness em consignação</span>
+    <h1>Vende, cobra e <span class="g">pensa</span> por você.</h1>
+    <p class="sub">Parceiras, consignação, acerto e comissão automáticos, estoque, PDV, financeiro, WhatsApp e IA — tudo integrado e <b>offline</b>. Feito para quem trabalha com peça consignada.</p>
+    <div class="acoes">
+      <a href="https://github.com/regimneves/fitgest-releases/releases/latest" class="btn btn-rosa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Baixar e testar grátis
+      </a>
+      <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20conhecer%20o%20FitGest" class="btn btn-zap">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <p class="trial-note">✦ <b>14 dias grátis</b>, com todos os recursos. Windows · instala e usa, sem servidor.</p>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span> <b>Acerto</b>&nbsp;automático</span>
+      <span class="chip"><span class="dot"></span> Funciona <b>offline</b></span>
+      <span class="chip"><span class="dot"></span> <b>IA</b>&nbsp;embarcada</span>
+      <span class="chip"><span class="dot"></span> WhatsApp integrado</span>
+      <span class="chip"><span class="dot"></span> Seus dados são seus</span>
+    </div>
+  </div>
+</section>
+
+<section class="porque blk">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Por que FitGest</span>
+      <h2>Feito para quem vive de consignação.</h2>
+      <p>Caderno, planilha e conversa solta no WhatsApp custam venda todo mês. O FitGest junta o relacionamento, o estoque consignado e a inteligência artificial num sistema só — instalado, rápido e independente de internet.</p>
+    </div>
+    <div class="tri">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <h3>Consignação sob controle</h3>
+        <p>O que saiu para cada parceira, o que vendeu e o que ainda está com ela — em tempo real, sem depender da memória.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Acerto e comissão sozinhos</h3>
+        <p>O sistema calcula o acerto pelo preço de venda e o lucro por atacado + margem, já com a comissão da consultora. Fim da conta errada no papel.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a4 4 0 0 1 4 4c1.7.5 3 2 3 4a4 4 0 0 1-1 2.6A4 4 0 0 1 15 20H9a4 4 0 0 1-3-6.4A4 4 0 0 1 5 11c0-2 1.3-3.5 3-4a4 4 0 0 1 4-4z"/><path d="M12 3v17"/></svg></div>
+        <h3>Inteligência de verdade</h3>
+        <p>IA que escreve suas cobranças, mostra a peça encalhada e o melhor cliente, e gera post e legenda a partir do seu estoque real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="consignacao">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">O coração do sistema</span>
+      <h2>Da peça que sai ao acerto que fecha.</h2>
+      <p>Toda a jornada da consignação num fluxo só: você entrega as peças, a parceira vende, e o FitGest sabe exatamente o que voltar, o que cobrar e quanto pagar de comissão.</p>
+    </div>
+    <div class="tri">
+      <div class="card">
+        <h3>1 · Saída consignada</h3>
+        <p>Registre as peças que saíram para cada parceira/consultora. Cada item fica rastreado por tamanho, preço e status.</p>
+      </div>
+      <div class="card">
+        <h3>2 · Venda e retorno</h3>
+        <p>Marque o que foi vendido e o que voltou. O sistema mantém o saldo em poder de cada parceira sempre atualizado.</p>
+      </div>
+      <div class="card">
+        <h3>3 · Acerto fechado</h3>
+        <p>Um clique gera o acerto: valor devido, comissão da consultora e seu lucro — pronto para enviar pelo WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="whatsapp" style="background:var(--papel);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">CRM + WhatsApp</span>
+      <h2>O relacionamento sai do sistema e chega no WhatsApp.</h2>
+      <p>Não adianta ter o melhor controle se a cliente esfria por falta de retorno. No FitGest, o histórico da cliente fica numa tela só e a mensagem sai de dentro do cadastro — com a IA sugerindo o texto.</p>
+    </div>
+
+    <div class="zapwrap">
+      <div>
+        <div class="fone">
+          <div class="topo">
+            <div class="av">NI</div>
+            <div><b>Consultora Niara</b><span>online</span></div>
+          </div>
+          <div class="chat">
+            <div class="bal in">Oi! Chegou a coleção nova? 😍 <span class="hora">10:22</span></div>
+            <div class="bal out">
+              <span class="selo-ia">✦ sugerido pela IA</span>
+              Chegou sim, Niara! Separei 6 peças no seu tamanho. Te mando o catálogo?
+              <span class="hora">10:24</span>
+            </div>
+            <div class="bal in">Manda! E o acerto do mês? 🙏 <span class="hora">10:24</span></div>
+            <div class="bal out">
+              Fechei aqui: acerto de <b>R$ 1.410,00</b> e sua comissão de <b>R$ 352,50</b>. Envio o recibo?
+              <span class="hora">10:25</span>
+            </div>
+            <div class="bal in">Perfeito, obrigada! 😄 <span class="hora">10:31</span></div>
+          </div>
+        </div>
+        <p class="nota-ex">Exemplo ilustrativo de uma conversa pelo FitGest.</p>
+      </div>
+
+      <div>
+        <div class="tri" style="grid-template-columns:1fr;gap:16px">
+          <div class="card">
+            <h3>Histórico numa tela só</h3>
+            <p>O que a cliente comprou, o que está consignado e o que deve — tudo no cadastro dela. Você nunca mais perde o fio da conversa.</p>
+          </div>
+          <div class="card">
+            <h3>Aniversário no automático</h3>
+            <p>O FitGest lembra do aniversário e manda a mensagem sozinho, no dia e no tom que você define. Fidelização sem esforço.</p>
+          </div>
+          <div class="card">
+            <h3>Mensagem escrita pela IA</h3>
+            <p>Cobrança, oferta e convite prontos no seu tom, em segundos. Você revisa, ajusta e envia — sem começar do zero.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="recursos">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Tudo que você precisa</span>
+      <h2>Um módulo para cada parte do negócio.</h2>
+      <p>Do fornecedor à parceira, da peça no estoque ao dinheiro no caixa — sem planilha, sem caderno, sem trocar de programa.</p>
+    </div>
+    <div class="grid">
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 11a3 3 0 1 0-1-5.8M18 20a5 5 0 0 0-3-4.6" stroke-linecap="round"/></svg></span>Parceiras &amp; Clientes</div><p>Cadastro completo de consultoras e clientes, com histórico de compras, consignações e conversas.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>Consignação</div><p>Saída, venda e retorno de peças por parceira, com saldo em poder de cada uma sempre atualizado.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Acerto &amp; Comissão</div><p>Acerto calculado pelo preço de venda, lucro por atacado + margem e comissão da consultora automáticos.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>Estoque &amp; Fábricas</div><p>Controle de peças, fornecedores e entrada por planilha Excel ou leitura por IA, com preço e markup.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 20h18M8 8h8M8 12h5"/></svg></span>PDV &amp; Vendas</div><p>Venda balcão rápida, com baixa de estoque e registro no financeiro na mesma tela.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Financeiro</div><p>Contas a pagar/receber, fluxo de caixa, inadimplência e recibo em PDF.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v11H7l-3 3z"/><path d="M8 10h8M8 13h5"/></svg></span>WhatsApp integrado</div><p>Inbox com histórico por cliente, envio de anexos e régua de contato — pelo seu próprio número.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a4 4 0 0 1 4 4c1.7.5 3 2 3 4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4c0-2 1.3-3.5 3-4a4 4 0 0 1 4-4z"/></svg></span>Inteligência artificial</div><p>Escreve mensagens, lê o negócio, gera marketing e importa a nota do fornecedor organizando o catálogo.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M4 21h16"/></svg></span>Dashboard &amp; Relatórios</div><p>Indicadores em tempo real, peça parada, melhores clientes e exportação para PDF/Excel.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg></span>Offline &amp; Backup</div><p>Roda no seu computador, funciona sem internet e faz backup — seus dados ficam com você.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ia blk" id="ia">
+  <div class="wrap">
+    <span class="eyebrow">Inteligência artificial</span>
+    <h2>Um sócio que enxerga por você.</h2>
+    <div class="ia-grid">
+      <div class="ia-item"><b>Escreve as suas mensagens</b><p>Cobrança, oferta e convite no seu tom, prontos em segundos. Você só revisa e envia.</p></div>
+      <div class="ia-item"><b>Lê o seu negócio</b><p>Mostra os melhores clientes, a peça que está encalhando e a hora certa de fazer o acerto.</p></div>
+      <div class="ia-item"><b>Faz o seu marketing</b><p>Gera post e legenda a partir do seu estoque real — divulgação pronta, sem começar do zero.</p></div>
+      <div class="ia-item"><b>Organiza a nota do fornecedor</b><p>Jogue a planilha ou a nota e a IA monta o catálogo, o preço de atacado e a sugestão de venda. Use Claude, GPT ou Gemini.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Comparativo</span>
+      <h2>FitGest x caderno e planilha.</h2>
+    </div>
+    <div class="cmp">
+      <table class="num">
+        <thead><tr><th>&nbsp;</th><th>FitGest</th><th>Caderno / planilha</th></tr></thead>
+        <tbody>
+          <tr><td>Saldo consignado por parceira</td><td class="yes">Em tempo real</td><td class="no">De memória</td></tr>
+          <tr><td>Acerto e comissão</td><td class="yes">Automáticos</td><td class="no">Na mão, com erro</td></tr>
+          <tr><td>Histórico da cliente no WhatsApp</td><td class="yes">Numa tela só</td><td class="no">Espalhado</td></tr>
+          <tr><td>Mensagem e marketing</td><td class="yes">Escritos pela IA</td><td class="no">Do zero, quando dá</td></tr>
+          <tr><td>Funciona sem internet</td><td class="yes">Sim</td><td class="no">—</td></tr>
+          <tr><td>Seus dados ficam com você</td><td class="yes">Sim</td><td class="no">Soltos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="baixar" style="background:var(--papel);border-top:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead" style="text-align:center;margin:0 auto 40px">
+      <span class="eyebrow">Teste grátis</span>
+      <h2>Baixe e use por 14 dias.</h2>
+      <p style="margin:0 auto">Sem cartão, sem compromisso. Instale no seu computador, com todos os recursos liberados. Gostou? É só ativar a licença — seus dados do teste continuam.</p>
+    </div>
+    <div style="max-width:430px;margin:0 auto">
+      <div class="plano dest">
+        <span class="tag">14 dias grátis</span>
+        <h3>FitGest completo</h3>
+        <div class="preco num">Teste grátis</div>
+        <div class="unica">Depois, licença anual de preço fixo</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Parceiras, clientes e consignação</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Acerto e comissão automáticos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Estoque, fábricas, PDV e vendas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Financeiro e relatórios</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> WhatsApp integrado</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> IA: mensagens, análise e marketing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Backup e atualizações automáticas</li>
+        </ul>
+        <a href="https://github.com/regimneves/fitgest-releases/releases/latest" class="btn btn-rosa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Baixar para Windows
+        </a>
+        <p style="text-align:center;font-size:13.5px;color:var(--cinza);margin-top:14px">ou <b style="color:var(--rosa-esc)">fale no WhatsApp</b> para uma demonstração</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="duvidas">
+  <div class="wrap">
+    <div class="lead" style="text-align:center;margin:0 auto 36px">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>O que todo distribuidor pergunta.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>O FitGest controla consignação mesmo?</summary>
+        <div class="resp">Sim, é o coração do sistema. Você registra o que saiu para cada parceira, o FitGest acompanha o que
+        vendeu e o que ainda está com ela, e o <b>acerto sai calculado</b> — com a comissão já descontada.</div>
+      </details>
+      <details>
+        <summary>O acerto e a comissão são calculados sozinhos?</summary>
+        <div class="resp">São. O acerto é calculado pelo preço de venda e o lucro pela regra de <b>atacado + margem</b>, com a
+        comissão da consultora aplicada automaticamente. Acabou a conta de cabeça no papel.</div>
+      </details>
+      <details>
+        <summary>Como funciona o teste grátis de 14 dias?</summary>
+        <div class="resp">Você baixa, instala e usa por <b>14 dias sem pagar nada</b>, com todos os recursos. Se decidir
+        continuar, é só ativar a licença — os dados que você cadastrou no teste continuam.</div>
+      </details>
+      <details>
+        <summary>Preciso de internet para usar?</summary>
+        <div class="resp">Não para o dia a dia. O FitGest é instalado no computador e funciona <b>offline</b> — consignação,
+        acerto, estoque, PDV e financeiro continuam mesmo com a internet fora. A internet só é necessária para
+        WhatsApp, IA e baixar atualizações.</div>
+      </details>
+      <details>
+        <summary>Onde ficam os meus dados?</summary>
+        <div class="resp">No seu computador, num arquivo só seu. Não ficam na nuvem de ninguém. O sistema tem rotina de
+        backup — e recomendamos guardar uma cópia em pen drive ou nuvem da sua preferência.</div>
+      </details>
+      <details>
+        <summary>E se eu tiver dificuldade para começar?</summary>
+        <div class="resp">A gente mostra o sistema funcionando antes de você decidir e ajuda na instalação e no primeiro
+        cadastro. O suporte é pelo WhatsApp <b>(34) 98408-1020</b> — você fala direto com quem desenvolveu o programa.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta blk" id="comprar">
+  <div class="wrap">
+    <h2>Pronto para organizar a sua consignação?</h2>
+    <p>Baixe o teste grátis ou fale com a gente pelo WhatsApp. Mostramos o sistema funcionando e tiramos suas dúvidas — sem compromisso.</p>
+    <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20conhecer%20o%20FitGest" class="btn" style="background:#fff;color:var(--rosa-esc)">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><a href="../">&larr; SoftIA</a> &nbsp;·&nbsp; FitGest — Sistema de Gestão para Moda Fitness em Consignação</div>
+    <div>© 2026 <span class="sol">SoftIA</span> · Todos os direitos reservados</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    var m = window.matchMedia('(prefers-color-scheme: dark)');
+    var set = function(){ document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light'); };
+    set(); m.addEventListener ? m.addEventListener('change', set) : m.addListener(set);
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
