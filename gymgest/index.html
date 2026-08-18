@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GymGest — Sistema de Gestão para Academias e Estúdios</title>
 <meta name="description" content="GymGest: alunos, matrículas, agenda de aulas, treinos com mapa muscular, avaliação física, financeiro, WhatsApp e IA — offline, com licença anual de preço fixo e alunos ilimitados." />
-<link rel="icon" href="../logos/softia-icone.svg" type="image/svg+xml">
+<link rel="icon" href="../logos/gymgest.png" type="image/png">
 
 <!-- ==== SEO / descoberta por buscadores e IA ==== -->
 <link rel="canonical" href="https://softia-sistemas.netlify.app/gymgest/" />
@@ -138,7 +138,7 @@
   header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bgpage) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
   .logo{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900;letter-spacing:-.02em}
-  .logo .mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(150deg,#37D4B3,var(--verde-esc));display:flex;align-items:center;justify-content:center}
+  .logo .mark{width:38px;height:38px;border-radius:11px;display:block;object-fit:cover}
   .logo .mark svg{width:22px;height:22px;color:#fff}
   .logo small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--cinza);text-transform:uppercase}
   .nav-links{display:flex;gap:26px;align-items:center;font-size:14.5px;font-weight:600;color:var(--cinza)}
@@ -274,7 +274,7 @@
 <header>
   <div class="wrap nav">
     <a class="logo" href="../">
-      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <img class="mark" src="../logos/gymgest.png" alt="">
       <span>GymGest<small>por SoftIA</small></span>
     </a>
     <nav class="nav-links">
@@ -520,8 +520,8 @@
       <div class="plano dest">
         <span class="tag">Licença anual</span>
         <h3>GymGest completo</h3>
-        <div class="preco num">12x R$ 75</div>
-        <div class="unica">R$ 900/ano · alunos ilimitados</div>
+        <div class="preco num">R$ 790 <span style="font-size:.42em;font-weight:700;letter-spacing:0">à vista</span></div>
+        <div class="unica">ou 12x R$ 75 · alunos ilimitados</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Alunos, planos e matrículas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Frequência, check-in e financeiro</li>
@@ -533,7 +533,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Relatórios, backup e atualizações</li>
         </ul>
         <a href="#comprar" class="btn btn-verde">Assinar o GymGest</a>
-        <p style="text-align:center;font-size:13.5px;color:var(--cinza);margin-top:14px">ou <b style="color:var(--verde-esc)">R$ 790 à vista</b> no primeiro ano</p>
+        <p style="text-align:center;font-size:13.5px;color:var(--cinza);margin-top:14px">12x de R$ 75 = R$ 900 no ano · instalação e treinamento inclusos</p>
       </div>
     </div>
   </div>

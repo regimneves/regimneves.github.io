@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FitGest — Sistema de Gestão para Moda Fitness em Consignação</title>
-<meta name="description" content="FitGest: parceiras, consignação, acerto automático, estoque, PDV, financeiro, WhatsApp e IA — para distribuidores de moda fitness. Offline, licença anual de preço fixo. Teste grátis por 14 dias." />
-<link rel="icon" href="../logos/softia-icone.svg" type="image/svg+xml">
+<title>FitGest — Gestão para Moda Fitness, Consignação e Varejo de Roupas</title>
+<meta name="description" content="FitGest: parceiras, consignação, sacola no condicional, PDV, estoque, financeiro, WhatsApp e IA — para moda fitness, distribuidores e lojas de roupas. Offline, licença anual: R$790 à vista ou 12x R$75. Teste grátis por 14 dias." />
+<link rel="icon" href="../logos/fitgest.png" type="image/png">
 
 <!-- ==== SEO ==== -->
 <link rel="canonical" href="https://softia-sistemas.netlify.app/fitgest/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="Softia" />
 <meta name="keywords" content="sistema para consignação de roupas, software para distribuidor de moda fitness, controle de consignação, gestão de revendedoras, acerto de consignado, sistema para moda fitness, programa de estoque de roupas, gestão de consignação com IA, software para consultoras de moda, sistema para revenda de roupa fitness" />
-<meta name="theme-color" content="#E31859" />
+<meta name="theme-color" content="#C13391" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -95,17 +95,17 @@
 
 <style>
   :root{
-    --rosa:#E31859; --rosa-esc:#B60F46; --rosa-claro:#FCE1EA;
+    --rosa:#C13391; --rosa-esc:#5B3FA6; --rosa-claro:#F4E6F4;
     --tinta:#1C1420; --cinza:#6B5F70; --borda:#EADFE4;
     --papel:#FBF5F7; --branco:#ffffff; --zap:#25D366; --lima:#7A9E00;
     --sombra:0 1px 2px rgba(28,20,32,.05), 0 8px 24px -12px rgba(28,20,32,.16);
     --bgpage:#ffffff;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2C1420; --bgpage:#140E1A; --rosa:#FF3D74; --rosa-esc:#FF6E97; }
+    :root{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2A1A30; --bgpage:#140E1A; --rosa:#E56CC0; --rosa-esc:#B49BEC; }
   }
-  :root[data-theme="dark"]{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2C1420; --bgpage:#140E1A; --rosa:#FF3D74; --rosa-esc:#FF6E97; }
-  :root[data-theme="light"]{ --tinta:#1C1420; --cinza:#6B5F70; --borda:#EADFE4; --papel:#FBF5F7; --branco:#ffffff; --rosa-claro:#FCE1EA; --bgpage:#ffffff; --rosa:#E31859; --rosa-esc:#B60F46; }
+  :root[data-theme="dark"]{ --tinta:#F7EEF4; --cinza:#B7A6BE; --borda:#372A41; --papel:#1B1422; --branco:#231A2C; --rosa-claro:#2A1A30; --bgpage:#140E1A; --rosa:#E56CC0; --rosa-esc:#B49BEC; }
+  :root[data-theme="light"]{ --tinta:#1C1420; --cinza:#6B5F70; --borda:#EADFE4; --papel:#FBF5F7; --branco:#ffffff; --rosa-claro:#F4E6F4; --bgpage:#ffffff; --rosa:#C13391; --rosa-esc:#5B3FA6; }
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -118,7 +118,7 @@
 
   .btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:12px;padding:15px 26px;font-size:16px;font-weight:800;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease}
   .btn:hover{transform:translateY(-1px)}
-  .btn-rosa{background:var(--rosa);color:#fff;box-shadow:0 8px 20px -8px rgba(227,24,89,.6)}
+  .btn-rosa{background:var(--rosa);color:#fff;box-shadow:0 8px 20px -8px rgba(193,51,145,.6)}
   .btn-zap{background:var(--zap);color:#fff}
   .btn-ghost{background:transparent;color:var(--tinta);border:1.5px solid var(--borda)}
   .btn svg{width:20px;height:20px}
@@ -126,7 +126,7 @@
   header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bgpage) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
   .logo{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900;letter-spacing:-.02em}
-  .logo .mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(150deg,#FF5C86,var(--rosa-esc));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:19px;transform:rotate(-6deg)}
+  .logo .mark{width:38px;height:38px;border-radius:11px;display:block;object-fit:cover}
   .logo small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--cinza);text-transform:uppercase}
   .nav-links{display:flex;gap:26px;align-items:center;font-size:14.5px;font-weight:600;color:var(--cinza)}
   .nav-links a:hover{color:var(--rosa-esc)}
@@ -189,7 +189,7 @@
   .cmp tr:last-child td{border-bottom:none}
 
   .plano{border:1px solid var(--borda);border-radius:20px;padding:28px 24px;background:var(--branco)}
-  .plano.dest{border:2px solid var(--rosa);position:relative;box-shadow:0 16px 40px -20px rgba(227,24,89,.5)}
+  .plano.dest{border:2px solid var(--rosa);position:relative;box-shadow:0 16px 40px -20px rgba(193,51,145,.5)}
   .plano.dest .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--rosa);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
   .plano h3{font-size:19px;font-weight:800}
   .plano .preco{font-size:40px;font-weight:900;margin:12px 0 2px;letter-spacing:-.03em}
@@ -215,7 +215,7 @@
   :root[data-theme="dark"] .fone{background:#0d1a17}
   @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .fone{background:#0d1a17}}
   .fone .topo{background:#075E54;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
-  .fone .av{width:34px;height:34px;border-radius:50%;background:#E31859;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;color:#fff}
+  .fone .av{width:34px;height:34px;border-radius:50%;background:var(--rosa);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;color:#fff}
   .fone .topo b{font-size:14.5px;display:block;line-height:1.2}
   .fone .topo span{font-size:11.5px;opacity:.8}
   .chat{padding:14px 12px;display:flex;flex-direction:column;gap:9px}
@@ -223,7 +223,7 @@
   .bal.out{align-self:flex-end;background:#DCF8C6;color:#101a12;border-top-right-radius:2px}
   .bal.in{align-self:flex-start;background:#fff;color:#101a12;border-top-left-radius:2px}
   .bal .hora{font-size:10px;color:#6b7a6b;float:right;margin:6px 0 -2px 10px}
-  .selo-ia{display:inline-flex;align-items:center;gap:5px;background:#FCE1EA;color:#B60F46;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+  .selo-ia{display:inline-flex;align-items:center;gap:5px;background:var(--rosa-claro);color:var(--rosa-esc);font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
   .nota-ex{text-align:center;font-size:12px;color:var(--cinza);margin-top:14px;font-style:italic}
 
   /* --- FAQ --- */
@@ -243,7 +243,7 @@
 <header>
   <div class="wrap nav">
     <a class="logo" href="../">
-      <span class="mark">F</span>
+      <img class="mark" src="../logos/fitgest.png" alt="">
       <span>FitGest<small>por SoftIA</small></span>
     </a>
     <nav class="nav-links">
@@ -259,9 +259,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Gestão para moda fitness em consignação</span>
+    <span class="eyebrow">Moda fitness, consignação e varejo de roupas</span>
     <h1>Vende, cobra e <span class="g">pensa</span> por você.</h1>
-    <p class="sub">Parceiras, consignação, acerto e comissão automáticos, estoque, PDV, financeiro, WhatsApp e IA — tudo integrado e <b>offline</b>. Feito para quem trabalha com peça consignada.</p>
+    <p class="sub">Parceiras, consignação, acerto e comissão automáticos, estoque, PDV, financeiro, WhatsApp e IA — tudo integrado e <b>offline</b>. Para quem trabalha com peça consignada, <b>sacola no condicional</b> ou loja de roupas no varejo.</p>
     <div class="acoes">
       <a href="https://github.com/regimneves/fitgest-releases/releases/latest" class="btn btn-rosa">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
@@ -287,8 +287,8 @@
   <div class="wrap">
     <div class="lead">
       <span class="eyebrow">Por que FitGest</span>
-      <h2>Feito para quem vive de consignação.</h2>
-      <p>Caderno, planilha e conversa solta no WhatsApp custam venda todo mês. O FitGest junta o relacionamento, o estoque consignado e a inteligência artificial num sistema só — instalado, rápido e independente de internet.</p>
+      <h2>Feito para consignação, condicional e loja de roupas.</h2>
+      <p>Caderno, planilha e conversa solta no WhatsApp custam venda todo mês. O FitGest junta o relacionamento, o estoque consignado e a inteligência artificial num sistema só — instalado, rápido e independente de internet. E a <b>sacola no condicional</b> — quando a loja manda peças para a cliente experimentar em casa — funciona igual à consignação: o sistema controla o que saiu, o que voltou e o que foi vendido.</p>
     </div>
     <div class="tri">
       <div class="card">
@@ -455,8 +455,8 @@
       <div class="plano dest">
         <span class="tag">14 dias grátis</span>
         <h3>FitGest completo</h3>
-        <div class="preco num">Teste grátis</div>
-        <div class="unica">Depois, licença anual de preço fixo</div>
+        <div class="preco num">R$ 790 <span style="font-size:.42em;font-weight:700;letter-spacing:0">à vista</span></div>
+        <div class="unica">ou 12x R$ 75 · licença anual · 14 dias grátis</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Parceiras, clientes e consignação</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Acerto e comissão automáticos</li>
