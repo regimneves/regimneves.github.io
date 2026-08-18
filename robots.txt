@@ -21,4 +21,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://regimneves.github.io/sitemap.xml
+Sitemap: https://softia-sistemas.netlify.app/sitemap.xml
