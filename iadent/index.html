@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IADent — Software para Consultório e Clínica Odontológica</title>
+<meta name="description" content="IADent: agenda, prontuário, odontograma, plano de tratamento, receituário digital com assinatura gov.br, convênios, financeiro, WhatsApp e IA — tudo em um só programa para o seu consultório odontológico. Offline e para Windows." />
+<!-- ==== SEO / descoberta por buscadores e IA ==== -->
+<link rel="canonical" href="https://softia.app.br/iadent/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="Softia" />
+<meta name="keywords" content="software para consultório odontológico, sistema para clínica odontológica, programa para dentista, prontuário odontológico digital, odontograma digital, plano de tratamento odontológico, receituário digital com assinatura gov.br, gestão de convênios odontológicos, agenda para dentista, software odontológico offline para Windows, sistema odontológico com inteligência artificial" />
+<meta name="theme-color" content="#6B4EE6" />
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IADent" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://softia.app.br/iadent/" />
+<meta property="og:title" content="IADent — Software para Consultório e Clínica Odontológica (com IA)" />
+<meta property="og:description" content="Agenda, prontuário, odontograma, plano de tratamento, receituário digital com assinatura gov.br, convênios, financeiro, WhatsApp e IA num só programa. Offline, para Windows. Teste grátis por 14 dias." />
+<meta property="og:image" content="https://softia.app.br/iadent/img/plano.jpg" />
+<meta property="og:image:alt" content="Plano de tratamento na arcada anatômica do IADent" />
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="IADent — Software Odontológico com IA" />
+<meta name="twitter:description" content="Agenda, prontuário, odontograma, receituário com assinatura gov.br, convênios, financeiro, WhatsApp e IA num só programa. Offline, para Windows. 14 dias grátis." />
+<meta name="twitter:image" content="https://softia.app.br/iadent/img/plano.jpg" />
+
+<link rel="icon" href="../logos/iadent.png" type="image/png">
+
+<!-- Dados estruturados: o produto (SoftwareApplication) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "IADent",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Sistema de gestão para consultórios e clínicas odontológicas",
+  "operatingSystem": "Windows",
+  "url": "https://softia.app.br/iadent/",
+  "description": "Software completo de gestão para consultórios e clínicas odontológicas. Reúne agenda, prontuário eletrônico, anamnese, odontograma e periograma, plano de tratamento, receituário digital com assinatura gov.br, contratos e TCLE, convênios e guias, financeiro, WhatsApp e e-mail num programa só, com inteligência artificial que lê o histórico da clínica para responder perguntas sobre o negócio e apoiar decisões. Funciona offline, com os dados no computador do próprio dentista.",
+  "inLanguage": "pt-BR",
+  "featureList": [
+    "Agenda com confirmação automática por WhatsApp",
+    "Prontuário eletrônico e anamnese",
+    "Odontograma e periograma por face do dente",
+    "Plano de tratamento na arcada anatômica",
+    "Receituário digital com assinatura gov.br",
+    "Contratos e TCLE, recibos e documentos em PDF",
+    "Convênios, guias e fechamento mensal",
+    "Financeiro: contas a pagar/receber e fluxo de caixa",
+    "WhatsApp integrado com lembretes e recalls",
+    "Inteligência artificial que lê os números da clínica",
+    "Funciona offline com backup automático"
+  ],
+  "screenshot": [
+    "https://softia.app.br/iadent/img/plano.jpg",
+    "https://softia.app.br/iadent/img/dashboard.jpg",
+    "https://softia.app.br/iadent/img/odontograma.jpg",
+    "https://softia.app.br/iadent/img/ia.jpg"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "lowPrice": "1200",
+    "highPrice": "1700",
+    "description": "Licença anual de preço fixo. Teste grátis por 14 dias.",
+    "availability": "https://schema.org/InStock",
+    "url": "https://softia.app.br/iadent/"
+  },
+  "brand": { "@type": "Brand", "name": "Softia" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Softia",
+    "url": "https://softia.app.br/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+55-34-98408-1020",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+}
+</script>
+<style>
+  :root{
+    --roxo:#6B4EE6; --roxo-esc:#4F35C9; --roxo-claro:#EDEAFE;
+    --ciano:#22D3EE;
+    --tinta:#141636; --cinza:#5B6280; --borda:#E6E4F2;
+    --papel:#F5F4FC; --branco:#ffffff; --zap:#25D366;
+    --sombra:0 1px 2px rgba(20,22,54,.05), 0 8px 24px -12px rgba(20,22,54,.16);
+    --bgpage:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --tinta:#ECEAFB; --cinza:#9C9FC0; --borda:#2A2748; --papel:#12112A; --branco:#191735; --roxo-claro:#221C4A; --bgpage:#0C0B1E; }
+  }
+  :root[data-theme="dark"]{ --tinta:#ECEAFB; --cinza:#9C9FC0; --borda:#2A2748; --papel:#12112A; --branco:#191735; --roxo-claro:#221C4A; --bgpage:#0C0B1E; }
+  :root[data-theme="light"]{ --tinta:#141636; --cinza:#5B6280; --borda:#E6E4F2; --papel:#F5F4FC; --branco:#ffffff; --roxo-claro:#EDEAFE; --bgpage:#ffffff; }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--bgpage);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo-esc)}
+  h1,h2,h3{text-wrap:balance;letter-spacing:-.02em;line-height:1.08}
+  .num{font-variant-numeric:tabular-nums}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:12px;padding:15px 26px;font-size:16px;font-weight:800;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-roxo{background:linear-gradient(120deg,var(--roxo),var(--roxo-esc));color:#fff;box-shadow:0 8px 20px -8px rgba(107,78,230,.65)}
+  .btn-zap{background:var(--zap);color:#fff}
+  .btn-ghost{background:transparent;color:var(--tinta);border:1.5px solid var(--borda)}
+  .btn svg{width:20px;height:20px}
+
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bgpage) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900;letter-spacing:-.02em}
+  .logo .mark{width:40px;height:40px;border-radius:11px;display:block;object-fit:contain;background:#fff;border:1px solid var(--borda)}
+  .logo small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--cinza);text-transform:uppercase}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:14.5px;font-weight:600;color:var(--cinza)}
+  .nav-links a:hover{color:var(--roxo-esc)}
+  @media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+  .hero{position:relative;overflow:hidden;background:radial-gradient(1100px 480px at 50% -8%, var(--roxo-claro), transparent 70%)}
+  .hero .wrap{padding:70px 22px 60px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,60px);font-weight:900;margin:18px auto 16px;max-width:15ch}
+  .hero h1 .g{background:linear-gradient(120deg,var(--roxo),var(--ciano));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-size:clamp(16px,2.2vw,20px);color:var(--cinza);max-width:640px;margin:0 auto 30px}
+  .acoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--branco);border:1px solid var(--borda);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700;box-shadow:var(--sombra)}
+  .chip b{color:var(--roxo-esc)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--ciano)}
+
+  section.blk{padding:72px 0}
+  .lead{max-width:660px;margin-bottom:38px}
+  .lead h2{font-size:clamp(26px,4vw,38px);font-weight:900;margin:10px 0 12px}
+  .lead p{color:var(--cinza);font-size:17px}
+
+  .porque{background:var(--papel);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.tri{grid-template-columns:1fr}}
+  .tri .card{background:var(--branco);border:1px solid var(--borda);border-radius:18px;padding:26px}
+  .tri .ic{width:46px;height:46px;border-radius:13px;background:var(--roxo-claro);display:flex;align-items:center;justify-content:center;color:var(--roxo-esc);margin-bottom:16px}
+  .tri .ic svg{width:24px;height:24px}
+  .tri h3{font-size:20px;font-weight:800;margin-bottom:8px}
+  .tri p{color:var(--cinza);font-size:15px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .feat{border:1px solid var(--borda);border-radius:16px;padding:20px;background:var(--branco);transition:border-color .15s, transform .15s}
+  .feat:hover{border-color:var(--roxo);transform:translateY(-2px)}
+  .feat .t{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;margin-bottom:7px}
+  .feat .t .b{width:30px;height:30px;border-radius:9px;background:var(--roxo-claro);display:flex;align-items:center;justify-content:center;color:var(--roxo-esc);flex-shrink:0}
+  .feat .t .b svg{width:17px;height:17px}
+  .feat p{color:var(--cinza);font-size:14px}
+
+  .ia{background:linear-gradient(160deg,#1B1348,#0E0A26);color:#EDEAFB}
+  .ia .eyebrow{color:var(--ciano)}
+  .ia h2{color:#fff;font-size:clamp(26px,4vw,38px);font-weight:900;margin:10px 0 26px;max-width:16ch}
+  .ia-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:760px){.ia-grid{grid-template-columns:1fr}}
+  .ia-item{background:#ffffff0a;border:1px solid #ffffff1f;border-radius:14px;padding:18px 20px}
+  .ia-item b{color:var(--ciano);font-size:15.5px}
+  .ia-item p{color:#B9B5D6;font-size:14.5px;margin-top:5px}
+
+  .planos{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;margin:0 auto;align-items:start}
+  @media(max-width:720px){.planos{grid-template-columns:1fr}}
+  .plano{border:1px solid var(--borda);border-radius:20px;padding:28px 24px;background:var(--branco)}
+  .plano.dest{border:2px solid var(--roxo);position:relative;box-shadow:0 16px 40px -20px rgba(107,78,230,.5)}
+  .plano .tag{position:absolute;top:-13px;left:26px;background:linear-gradient(120deg,var(--roxo),var(--roxo-esc));color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+  .plano h3{font-size:20px;font-weight:900}
+  .plano .quem{font-size:13.5px;color:var(--cinza);margin-top:3px}
+  .plano .preco{font-size:34px;font-weight:900;margin:16px 0 2px;letter-spacing:-.03em}
+  .plano .unica{font-size:13.5px;color:var(--roxo-esc);font-weight:800}
+  .plano ul{list-style:none;margin:20px 0 22px;display:flex;flex-direction:column;gap:10px}
+  .plano li{display:flex;gap:9px;font-size:14.5px;align-items:flex-start}
+  .plano li svg{width:18px;height:18px;color:var(--roxo);flex-shrink:0;margin-top:1px}
+  .plano .btn{width:100%;justify-content:center}
+
+  .cta{background:linear-gradient(150deg,var(--roxo),var(--roxo-esc));color:#fff;text-align:center}
+  .cta h2{font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:14px;color:#fff}
+  .cta p{opacity:.92;font-size:18px;max-width:540px;margin:0 auto 28px}
+
+  footer{background:var(--papel);border-top:1px solid var(--borda);padding:36px 0;color:var(--cinza);font-size:13.5px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .foot .sol{color:var(--roxo-esc);font-weight:800}
+  .foot a:hover{color:var(--roxo-esc)}
+
+  /* --- telas do sistema --- */
+  .shots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .shot{border:1px solid var(--borda);border-radius:16px;overflow:hidden;background:var(--branco);box-shadow:var(--sombra)}
+  .shot .img{background:var(--roxo-claro);border-bottom:1px solid var(--borda);line-height:0}
+  .shot img{width:100%;height:auto;display:block}
+  .shot .leg{padding:14px 16px}
+  .shot .leg b{display:block;font-size:15.5px;margin-bottom:4px}
+  .shot .leg p{font-size:13.5px;color:var(--cinza);margin:0}
+  .shot.wide{grid-column:1/-1}
+
+  /* --- WhatsApp: clínica e paciente --- */
+  .zapwrap{display:grid;gap:38px;grid-template-columns:1fr 1fr;align-items:center}
+  @media(max-width:860px){.zapwrap{grid-template-columns:1fr}}
+  .fone{max-width:330px;margin:0 auto;border:9px solid #171433;border-radius:34px;overflow:hidden;
+        background:#E5DDD5;box-shadow:0 24px 50px -22px rgba(20,22,54,.55)}
+  :root[data-theme="dark"] .fone{background:#0d1720}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .fone{background:#0d1720}}
+  .fone .topo{background:#075E54;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+  .fone .av{width:34px;height:34px;border-radius:50%;background:var(--roxo);display:flex;align-items:center;
+            justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .fone .topo b{font-size:14.5px;display:block;line-height:1.2}
+  .fone .topo span{font-size:11.5px;opacity:.8}
+  .chat{padding:14px 12px;display:flex;flex-direction:column;gap:9px}
+  .bal{max-width:86%;padding:8px 11px;border-radius:9px;font-size:13.2px;line-height:1.45;
+       box-shadow:0 1px 1px rgba(0,0,0,.13);position:relative}
+  .bal.out{align-self:flex-end;background:#DCF8C6;color:#101a12;border-top-right-radius:2px}
+  .bal.in{align-self:flex-start;background:#fff;color:#101a12;border-top-left-radius:2px}
+  .bal .hora{font-size:10px;color:#6b7a6b;float:right;margin:6px 0 -2px 10px}
+  .nota-ex{text-align:center;font-size:12px;color:var(--cinza);margin-top:14px;font-style:italic}
+  .pill{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+        color:var(--roxo-esc);background:var(--roxo-claro);border-radius:999px;padding:3px 9px;margin-bottom:6px}
+
+  /* --- perguntas frequentes --- */
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .faq details{border:1px solid var(--borda);border-radius:14px;background:var(--branco);overflow:hidden}
+  .faq summary{cursor:pointer;padding:17px 20px;font-weight:700;font-size:16px;list-style:none;display:flex;
+               justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--roxo);font-size:22px;font-weight:800;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details[open] summary{border-bottom:1px solid var(--borda)}
+  .faq .resp{padding:16px 20px 20px;color:var(--cinza);font-size:15px}
+  .faq .resp b{color:var(--tinta)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">
+      <img class="mark" src="../logos/iadent.png" alt="">
+      <span>IADent<small>por SoftIA</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#telas">Telas</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#ia">Inteligência</a>
+      <a href="#planos">Planos</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#comprar" class="btn btn-roxo" style="padding:10px 18px;font-size:14px">Falar com vendas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Software para consultório e clínica odontológica</span>
+    <h1>O seu consultório <span class="g">sem papel</span>, do agendamento ao recibo.</h1>
+    <p class="sub">Agenda, prontuário, odontograma, plano de tratamento, receituário e documentos digitais, convênios, financeiro, WhatsApp e IA — tudo em um só programa para Windows. Funciona <b>offline</b>.</p>
+    <div class="acoes">
+      <a href="https://github.com/regimneves/iadent-releases/releases/latest" class="btn btn-roxo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Baixar e testar 14 dias grátis
+      </a>
+      <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20conhecer%20o%20IADent" class="btn btn-zap"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg> Falar no WhatsApp</a>
+      <a href="#recursos" class="btn btn-ghost">Ver recursos</a>
+    </div>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span> <b>Prontuário</b>&nbsp;eletrônico</span>
+      <span class="chip"><span class="dot"></span> <b>Odontograma</b>&nbsp;por face</span>
+      <span class="chip"><span class="dot"></span> <b>Receituário</b>&nbsp;digital</span>
+      <span class="chip"><span class="dot"></span> Funciona <b>offline</b></span>
+      <span class="chip"><span class="dot"></span> <b>IA</b>&nbsp;embarcada</span>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="telas" style="background:var(--papel);border-top:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Por dentro do sistema</span>
+      <h2>Veja como é na prática.</h2>
+      <p>Não é promessa de folheto. São as telas reais do programa que vai ficar no computador do seu consultório.</p>
+    </div>
+    <div class="shots">
+      <div class="shot wide">
+        <div class="img"><img src="img/plano.jpg" alt="Plano de tratamento do IADent na arcada dentária anatômica" loading="lazy"></div>
+        <div class="leg"><b>Plano de tratamento na arcada anatômica</b><p>Clique no dente e monte o plano procedimento por procedimento, com valores e alerta clínico do paciente. O orçamento fica visual — o paciente entende e aprova na cadeira.</p></div>
+      </div>
+      <div class="shot wide">
+        <div class="img"><img src="img/dashboard.jpg" alt="Painel do IADent com consultas do dia, retornos e aniversariantes" loading="lazy"></div>
+        <div class="leg"><b>A primeira tela do seu dia</b><p>Consultas de hoje, pacientes ativos, próximos retornos, últimos atendimentos e aniversariantes — o consultório inteiro num painel só, sem abrir agenda de papel.</p></div>
+      </div>
+      <div class="shot">
+        <div class="img"><img src="img/odontograma.jpg" alt="Odontograma do IADent com marcação por face do dente" loading="lazy"></div>
+        <div class="leg"><b>Odontograma por face</b><p>Adulto e decíduo (infantil). Marque cárie, restauração, canal, coroa, implante e extração por face, com legenda e atalhos de teclado.</p></div>
+      </div>
+      <div class="shot">
+        <div class="img"><img src="img/prontuario.jpg" alt="Prontuário eletrônico do paciente no IADent" loading="lazy"></div>
+        <div class="leg"><b>Prontuário completo do paciente</b><p>Resumo, anamnese, plano, prontuário, anexos, timeline, contratos, receituário e recibos — todo o histórico do paciente em abas, num lugar só.</p></div>
+      </div>
+      <div class="shot">
+        <div class="img"><img src="img/anamnese.jpg" alt="Anamnese e ficha clínica do paciente no IADent" loading="lazy"></div>
+        <div class="leg"><b>Anamnese e ficha clínica</b><p>Condições sistêmicas, medicações, alergias e hábitos num formulário guiado — e o alerta clínico aparece sozinho na hora do atendimento.</p></div>
+      </div>
+      <div class="shot">
+        <div class="img"><img src="img/govbr.jpg" alt="Receituário e documentos digitais do IADent, prontos para assinar" loading="lazy"></div>
+        <div class="leg"><b>Receituário e documentos digitais</b><p>Receita, atestado, contrato e TCLE com modelos prontos. O IADent <b>gera o PDF na hora</b> — você assina na tela, imprime ou usa a assinatura oficial gov.br — e envia pelo WhatsApp.</p></div>
+      </div>
+      <div class="shot">
+        <div class="img"><img src="img/ia.jpg" alt="Assistente de IA do IADent conectado aos dados da clínica" loading="lazy"></div>
+        <div class="leg"><b>Uma IA que conhece o seu consultório</b><p>Conectada ao financeiro, aos pacientes e à agenda reais. Pergunte por texto ou por voz: "resume o meu dia", "qual o saldo do mês e contas a vencer".</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="porque blk">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Por que IADent</span>
+      <h2>Um consultório inteiro, sem juntar quebra-cabeça.</h2>
+      <p>Nada de agenda de papel, ficha na gaveta, receita na mão e o WhatsApp no celular pessoal. O IADent reúne tudo num programa só — instalado, rápido e independente de internet.</p>
+    </div>
+    <div class="tri">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></div>
+        <h3>Tudo em um só programa</h3>
+        <p>Agenda, prontuário, odontograma, receita, convênio e financeiro no mesmo lugar — sem trocar de sistema no meio do atendimento.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/><path d="M21 5a9 9 0 1 0 .5 8"/></svg></div>
+        <h3>Offline e com seus dados</h3>
+        <p>Roda direto no computador do consultório. A internet caiu? O sistema continua. Os dados dos pacientes ficam com você, com backup automático.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a4 4 0 0 1 4 4c1.7.5 3 2 3 4a4 4 0 0 1-1 2.6A4 4 0 0 1 15 20H9a4 4 0 0 1-3-6.4A4 4 0 0 1 5 11c0-2 1.3-3.5 3-4a4 4 0 0 1 4-4z"/><path d="M12 3v17"/></svg></div>
+        <h3>Inteligência de verdade</h3>
+        <p>IA conectada aos seus números: resume o dia, aponta contas a vencer, retornos da semana e pacientes para reativar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="whatsapp">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Menos falta na cadeira</span>
+      <h2>Lembretes, confirmações e recalls no automático.</h2>
+      <p>O IADent agenda sozinho as mensagens do consultório: lembrete 24h antes, aviso extra para quem costuma faltar, parabéns de aniversário e recall de retorno. Menos cadeira vazia, mais paciente voltando.</p>
+    </div>
+
+    <div class="zapwrap">
+      <div>
+        <div class="fone">
+          <div class="topo">
+            <div class="av">MC</div>
+            <div><b>Consultório · Dra. Marina</b><span>online</span></div>
+          </div>
+          <div class="chat">
+            <div class="bal out">
+              Olá, Ana! 😊 Passando para <b>confirmar sua consulta</b> amanhã, 14/09, às 10h — Profilaxia + aplicação de flúor.
+              <span class="hora">18:00</span>
+            </div>
+            <div class="bal in">
+              Confirmado! Estarei aí 👍
+              <span class="hora">18:12</span>
+            </div>
+            <div class="bal out">
+              Perfeito! Qualquer imprevisto, é só avisar por aqui. Até amanhã 🦷
+              <span class="hora">18:13</span>
+            </div>
+            <div class="bal out">
+              Ana, sua <b>limpeza de retorno</b> já faz 6 meses. Quer que eu reserve um horário nesta semana?
+              <span class="hora">seg 09:30</span>
+            </div>
+            <div class="bal in">
+              Quero sim! Pode ser quinta de manhã 😀
+              <span class="hora">seg 09:41</span>
+            </div>
+          </div>
+        </div>
+        <p class="nota-ex">Exemplo ilustrativo das mensagens automáticas do IADent.</p>
+      </div>
+
+      <div>
+        <div class="tri" style="grid-template-columns:1fr;gap:16px">
+          <div class="card">
+            <span class="pill">Automático</span>
+            <h3>Lembrete 24h antes</h3>
+            <p>Todo paciente com sessão marcada recebe a confirmação um dia antes, com data, hora e procedimento — sem você digitar nada.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Automático</span>
+            <h3>Aviso extra para quem falta</h3>
+            <p>Pacientes com histórico de faltas recebem um segundo lembrete 4h antes. O risco é calculado sozinho, paciente por paciente.</p>
+          </div>
+          <div class="card">
+            <span class="pill">No sistema</span>
+            <h3>Recall de retorno e aniversário</h3>
+            <p>Limpeza de 6 meses, aniversário e pós-atendimento com modelos prontos. Envie um a um pela inbox ou em lote para uma lista.</p>
+          </div>
+          <div class="card">
+            <h3>Tudo fica na ficha do paciente</h3>
+            <p>Conversas, receitas, contratos e sessões reunidos na ficha — a linha do tempo completa de cada paciente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="recursos" style="background:var(--papel);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Tudo que o consultório precisa</span>
+      <h2>Um módulo para cada parte da clínica.</h2>
+      <p>Do primeiro contato do interessado ao recall do paciente fiel — sem ficha de papel, sem caderno, sem trocar de programa.</p>
+    </div>
+    <div class="grid">
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span>Agenda &amp; Confirmações</div><p>Agenda por dia e semana, lista de espera e confirmação automática por WhatsApp. Marcações de agendada, realizada, falta e cancelada.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>Prontuário &amp; Anamnese</div><p>Ficha completa do paciente com anamnese, alertas clínicos, anexos e timeline. Todo o histórico em abas, num lugar só.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 4c-2.5 0-4 2-4 5 0 2 .6 3.5 1 6 .4 2.3 1 4.5 2.3 4.5 1.1 0 1.2-2 2.7-2s1.6 2 2.7 2c1.3 0 1.9-2.2 2.3-4.5.4-2.5 1-4 1-6 0-3-1.5-5-4-5-1.5 0-2 .7-4 .7S9.5 4 8 4z"/></svg></span>Odontograma &amp; Periograma</div><p>Adulto e decíduo, marcação por face do dente, periograma de sondagem. Padrão FDI com legenda clara.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M4 21h16"/></svg></span>Plano de Tratamento</div><p>Monte o plano na arcada anatômica clicando no dente, com procedimentos do catálogo, valores e aprovação do paciente.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg></span>Receituário &amp; Documentos</div><p>Receita, atestado, contrato e TCLE com modelos prontos. Gera o PDF na hora, pronto para assinar — na tela, impresso ou pela assinatura oficial gov.br.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span>Contratos &amp; TCLE</div><p>Templates de contrato e termo de consentimento (TCLE), recibos e documentos em PDF com a identidade do consultório.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18l-1.5 12.5A2 2 0 0 1 17.5 21h-11A2 2 0 0 1 4.5 19.5L3 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></span>Convênios &amp; Guias</div><p>Cadastro de convênios, emissão de guias e fechamento mensal por convênio — o que a clínica faturou, organizado.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Financeiro</div><p>Contas a pagar e a receber, fluxo de caixa e recibo em PDF. O caixa do consultório sob controle, sem planilha.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7z"/><path d="M9 20h6M10 22h4"/></svg></span>Recalls &amp; NPS</div><p>Retornos programados, aniversariantes e pesquisa de satisfação (NPS) para saber o que o paciente achou do atendimento.</p></div>
+      <div class="feat"><div class="t"><span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="15" rx="2.5"/><path d="M8 21h8"/><path d="M7 9l5 3 5-3"/></svg></span>WhatsApp &amp; IA</div><p>Inbox, disparo em massa com proteção anti-ban, campanhas e um assistente de IA que lê os números do consultório.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ia blk" id="ia">
+  <div class="wrap">
+    <span class="eyebrow">Inteligência artificial</span>
+    <h2>Um gestor conectado aos números do consultório.</h2>
+    <div class="ia-grid">
+      <div class="ia-item"><b>Resume o seu dia</b><p>Pergunte "como está o meu consultório hoje" e receba um panorama de agenda, retornos e caixa em segundos.</p></div>
+      <div class="ia-item"><b>Cuida do caixa</b><p>Aponta o saldo do mês, contas a vencer e para onde o dinheiro está indo — antes de virar aperto.</p></div>
+      <div class="ia-item"><b>Não deixa retorno escapar</b><p>Lista quem está em recall, quem tem plano de tratamento em aberto e quem faltou, com sugestão de reabordagem.</p></div>
+      <div class="ia-item"><b>Você escolhe a IA</b><p>Fale por texto ou pelo microfone. Use a inteligência que preferir — Claude, GPT ou Gemini — com a sua própria chave.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" style="text-align:center">
+  <div class="wrap">
+    <span class="eyebrow">Seguro e em conformidade</span>
+    <h2 style="font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:10px auto 14px;max-width:20ch">Prontuário sério, do jeito que a odontologia exige.</h2>
+    <p style="color:var(--cinza);max-width:640px;margin:0 auto 30px;font-size:16.5px">Documentos gerados na hora e prontos para assinar, dados dos pacientes no seu próprio computador, backup automático e login por usuário. Seu prontuário protegido, o paciente resguardado.</p>
+    <div class="tri">
+      <div class="card"><h3 style="font-size:17px;font-weight:800;margin-bottom:6px">🔏 Documentos com validade</h3><p style="color:var(--cinza);font-size:14.5px">O PDF é gerado sempre pelo IADent — você assina na tela, imprime ou usa a assinatura oficial gov.br (ICP-Brasil). Nunca fica travado por um sistema externo fora do ar.</p></div>
+      <div class="card"><h3 style="font-size:17px;font-weight:800;margin-bottom:6px">🔒 Dados com você</h3><p style="color:var(--cinza);font-size:14.5px">O prontuário fica no computador do consultório, não na nuvem de terceiros. Backup automático diário.</p></div>
+      <div class="card"><h3 style="font-size:17px;font-weight:800;margin-bottom:6px">👥 Multiusuário</h3><p style="color:var(--cinza);font-size:14.5px">Login por dentista e recepção, com níveis de acesso. Cada um vê o que precisa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="planos" style="background:var(--papel);border-top:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead" style="text-align:center;margin:0 auto 44px">
+      <span class="eyebrow">Preço</span>
+      <h2>Licença anual, tudo incluído.</h2>
+      <p style="margin:0 auto">Todos os recursos, atualizações e suporte por WhatsApp — instalação e treinamento inclusos. Teste grátis por 14 dias.</p>
+    </div>
+    <div class="planos">
+      <div class="plano">
+        <h3>Consultório</h3>
+        <div class="quem">1 dentista + recepção · 1 máquina</div>
+        <div class="preco num">R$ 1.200 <span style="font-size:.42em;font-weight:700;letter-spacing:0">à vista</span></div>
+        <div class="unica">ou 12x de R$ 110</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Agenda, prontuário e odontograma</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Plano de tratamento e catálogo de procedimentos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Receituário e documentos digitais</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Convênios, financeiro e WhatsApp</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Assistente de IA, backup e atualizações</li>
+        </ul>
+        <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20o%20IADent%20-%20plano%20Consult%C3%B3rio" class="btn btn-ghost" style="border-color:var(--roxo);color:var(--roxo-esc)">Assinar o Consultório</a>
+      </div>
+      <div class="plano dest">
+        <span class="tag">Mais escolhido</span>
+        <h3>Clínica</h3>
+        <div class="quem">2 ou mais dentistas + recepção · em rede</div>
+        <div class="preco num">R$ 1.700 <span style="font-size:.42em;font-weight:700;letter-spacing:0">à vista</span></div>
+        <div class="unica">ou 12x de R$ 160</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Tudo do plano Consultório</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Vários dentistas com agenda própria</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Uso em rede: recepção e consultórios no mesmo banco</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Multiusuário com níveis de acesso</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12.5 10 17l9-10"/></svg> Prioridade no suporte por WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20o%20IADent%20-%20plano%20Cl%C3%ADnica" class="btn btn-roxo">Assinar a Clínica</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13.5px;color:var(--cinza);margin-top:22px">Planos anuais · instalação e treinamento inclusos · suporte por WhatsApp (34) 98408-1020</p>
+  </div>
+</section>
+
+<section class="blk" id="duvidas">
+  <div class="wrap">
+    <div class="lead" style="text-align:center;margin:0 auto 36px">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>O que todo dentista pergunta.</h2>
+    </div>
+    <div class="faq">
+
+      <details open>
+        <summary>Preciso de internet para usar?</summary>
+        <div class="resp">Não para o dia a dia. O IADent é instalado no computador e funciona <b>offline</b> —
+        agenda, prontuário, odontograma, plano de tratamento e financeiro continuam mesmo com a internet fora.
+        A internet só é necessária para o que depende dela: enviar WhatsApp, assinar no gov.br,
+        usar a IA e baixar atualizações.</div>
+      </details>
+
+      <details>
+        <summary>Onde ficam os dados dos meus pacientes?</summary>
+        <div class="resp">No seu computador, num arquivo só seu. Não ficam na nuvem de ninguém.
+        O sistema faz backup automático — e recomendamos guardar uma cópia em pen drive ou nuvem
+        da sua preferência, como você já faria com qualquer arquivo importante.</div>
+      </details>
+
+      <details>
+        <summary>A receita e o atestado têm validade legal? E se o gov.br cair?</summary>
+        <div class="resp">Têm. O IADent <b>gera o PDF na hora</b> da receita, atestado, contrato e TCLE —
+        e isso <b>não depende de nenhum sistema externo estar no ar</b>. Para assinar, você escolhe:
+        na <b>tela/tablet</b> (contratos e TCLE), <b>impresso</b> com carimbo, ou pela <b>assinatura oficial
+        gov.br</b> (ICP-Brasil, validade jurídica) quando quiser. Se o gov.br estiver momentaneamente
+        indisponível, o documento já está pronto no seu computador e você não fica travado — assina depois
+        ou imprime na hora.</div>
+      </details>
+
+      <details>
+        <summary>Funciona para clínica com vários dentistas?</summary>
+        <div class="resp">Funciona. No plano <b>Clínica</b>, cada dentista tem a sua agenda e o sistema roda em <b>rede</b>,
+        com a recepção e os consultórios no mesmo banco de dados. Login e níveis de acesso por usuário.</div>
+      </details>
+
+      <details>
+        <summary>Dá para migrar minha agenda e meus pacientes de hoje?</summary>
+        <div class="resp">Dá. O IADent importa a sua lista de contatos e a gente ajuda a organizar os pacientes
+        no primeiro cadastro. Você não começa do zero.</div>
+      </details>
+
+      <details>
+        <summary>O WhatsApp integrado pode derrubar meu número?</summary>
+        <div class="resp">O envio é feito pelo seu próprio WhatsApp, com intervalo entre as mensagens e
+        proteção contra disparo em rajada, para reduzir o risco de bloqueio. Ainda assim, vale a regra de ouro:
+        fale com quem já é seu paciente e quer ouvir você.</div>
+      </details>
+
+      <details>
+        <summary>E se eu tiver dificuldade para começar?</summary>
+        <div class="resp">A gente mostra o sistema funcionando antes de você decidir e ajuda na instalação e
+        no primeiro cadastro. O suporte é pelo WhatsApp <b>(34) 98408-1020</b> — você fala direto com quem
+        desenvolveu o programa.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta blk" id="comprar">
+  <div class="wrap">
+    <h2>Comece hoje mesmo.</h2>
+    <p>Baixe e teste 14 dias grátis, ou fale com a gente pelo WhatsApp. Mostramos o sistema funcionando e tiramos suas dúvidas — sem compromisso.</p>
+    <div class="acoes">
+    <a href="https://github.com/regimneves/iadent-releases/releases/latest" class="btn" style="background:#fff;color:var(--roxo-esc)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+      Baixar e testar 14 dias grátis
+    </a>
+    <a href="https://wa.me/5534984081020?text=Ol%C3%A1!%20Quero%20conhecer%20o%20IADent" class="btn btn-ghost" style="border-color:rgba(255,255,255,.5);color:#fff">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
+      Falar no WhatsApp
+    </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><a href="../">&larr; SoftIA</a> &nbsp;·&nbsp; IADent — Software para Consultório e Clínica Odontológica</div>
+    <div>© 2026 <span class="sol">SoftIA</span> · Todos os direitos reservados</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    var m = window.matchMedia('(prefers-color-scheme: dark)');
+    var set = function(){ document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light'); };
+    set(); m.addEventListener ? m.addEventListener('change', set) : m.addListener(set);
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

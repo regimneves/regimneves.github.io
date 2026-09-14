@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="Jx7JEF3abFfZ9GMDE-rWP8tjw6-WR-0qdS2SdecRtCE" />
 <title>SoftIA — Softwares Inteligentes para o seu negócio</title>
-<meta name="description" content="SoftIA desenvolve sistemas de gestão sob medida, com inteligência artificial. Conheça o AquaGest (lojas de piscina), o GymGest (academias e estúdios), o FitGest (moda fitness, consignação e varejo de roupas) e o Sabiá (tutor por IA para estudar).">
+<meta name="description" content="SoftIA desenvolve sistemas de gestão sob medida, com inteligência artificial. Conheça o AquaGest (lojas de piscina), o GymGest (academias e estúdios), o FitGest (moda fitness, consignação e varejo de roupas), o IADent (consultórios odontológicos) e o Sabiá (tutor por IA para estudar).">
 <meta property="og:title" content="SoftIA — Softwares Inteligentes">
-<meta property="og:description" content="Sistemas de gestão sob medida, com IA. AquaGest para lojas de piscina, GymGest para academias, FitGest para moda fitness em consignação e Sabiá, o tutor por IA.">
+<meta property="og:description" content="Sistemas de gestão sob medida, com IA. AquaGest para lojas de piscina, GymGest para academias, FitGest para moda fitness, IADent para consultórios odontológicos e Sabiá, o tutor por IA.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://softia.app.br/">
 <meta property="og:url" content="https://softia.app.br/">
@@ -96,6 +96,19 @@
           "position": 4,
           "item": {
             "@type": "SoftwareApplication",
+            "name": "IADent",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Windows",
+            "url": "https://softia.app.br/iadent/",
+            "description": "Software de gestão para consultórios e clínicas odontológicas: agenda, prontuário, odontograma, plano de tratamento, receituário digital com assinatura gov.br, convênios, financeiro, WhatsApp e IA. Offline, licença anual.",
+            "publisher": { "@id": "https://softia.app.br/#organizacao" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
             "name": "Sabiá",
             "applicationCategory": "EducationalApplication",
             "operatingSystem": "Windows, Web, Android",
@@ -129,6 +142,7 @@
   --gym:#0EA085; --gym-esc:#0A7D68;
   --fit:#E31859; --fit-esc:#B60F46;
   --sabia:#7C5CFF; --sabia-esc:#5B3FD6;
+  --iadent:#6B4EE6; --iadent-esc:#4F35C9;
 
   --radius:18px;
   --sombra:0 1px 2px rgba(10,22,48,.04), 0 12px 30px -18px rgba(10,22,48,.28);
@@ -227,6 +241,7 @@ section{padding:74px 0}
 .prod.gym{--c:var(--gym);--c2:var(--gym-esc)}
 .prod.fit{--c:var(--fit);--c2:var(--fit-esc)}
 .prod.sabia{--c:var(--sabia);--c2:var(--sabia-esc)}
+.prod.iadent{--c:var(--iadent);--c2:var(--iadent-esc)}
 .prod .badge{display:inline-flex;align-items:center;gap:9px;font-family:'Saira';font-weight:700;letter-spacing:.3px;font-size:13px;
   color:var(--c2);background:color-mix(in srgb,var(--c) 14%, var(--surface));padding:7px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 30%, transparent)}
 :root[data-theme="dark"] .prod .badge, .prod .badge{}
@@ -314,7 +329,7 @@ footer .fim{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,2
       <div class="head">
         <span class="eyebrow">Nossos produtos</span>
         <h2>Um sistema pronto para o seu setor</h2>
-        <p>Quatro produtos prontos, cada um com IA embarcada: gestão completa para a sua loja, academia ou distribuidora — e o Sabiá, o tutor por IA para estudar. Escolha o seu.</p>
+        <p>Cinco produtos prontos, cada um com IA embarcada: gestão completa para a sua loja, academia, distribuidora ou consultório odontológico — e o Sabiá, o tutor por IA para estudar. Escolha o seu.</p>
       </div>
 
       <div class="produtos">
@@ -386,6 +401,30 @@ footer .fim{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,2
           <div class="acoes">
             <a class="btn btn-prod" href="fitgest/">Ver o FitGest →</a>
             <a class="btn btn-ghost" href="https://github.com/regimneves/fitgest-releases/releases/latest">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              Baixar · 14 dias grátis
+            </a>
+          </div>
+        </article>
+
+        <!-- IADent -->
+        <article class="prod iadent">
+          <span class="badge"><img src="logos/iadent.png" alt=""> Consultórios e clínicas odontológicas</span>
+          <img class="prodlogo" src="logos/iadent.png" alt="IADent">
+          <h3>IADent</h3>
+          <div class="tag">Gestão completa para o seu consultório odontológico.</div>
+          <p class="desc">Do agendamento ao recibo, sem papel: agenda, prontuário, odontograma, plano de tratamento e receituário digital — com WhatsApp e IA que leem o seu consultório.</p>
+          <ul>
+            <li>Agenda e prontuário</li>
+            <li>Odontograma e periograma</li>
+            <li>Plano de tratamento</li>
+            <li>Receituário digital</li>
+            <li>Convênios e financeiro</li>
+            <li>Assistente de IA</li>
+          </ul>
+          <div class="acoes">
+            <a class="btn btn-prod" href="iadent/">Ver o IADent →</a>
+            <a class="btn btn-ghost" href="https://github.com/regimneves/iadent-releases/releases/latest">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               Baixar · 14 dias grátis
             </a>
@@ -470,6 +509,7 @@ footer .fim{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,2
         <a href="aquagest/">AquaGest</a>
         <a href="gymgest/">GymGest</a>
         <a href="fitgest/">FitGest</a>
+        <a href="iadent/">IADent</a>
         <a href="https://sabia-tutor.netlify.app">Sabiá</a>
         <a href="https://wa.me/5534984081020">WhatsApp: +55 34 98408-1020</a>
       </div>
