@@ -1,22 +1,24 @@
 # SoftIA — Softwares de gestão com Inteligência Artificial
 
-> A SoftIA desenvolve sistemas de gestão para pequenos e médios negócios no Brasil, cada um com um assistente de Inteligência Artificial embutido que lê os números do próprio negócio e responde perguntas, prevê tendências e sugere decisões. Todos os programas rodam no Windows, funcionam offline (os dados ficam no computador do cliente), têm licença anual de preço fixo e teste grátis de 14 dias. Site oficial: https://softia.app.br
+> A SoftIA desenvolve sistemas de gestão para pequenos e médios negócios no Brasil, cada um com um assistente de Inteligência Artificial embutido que lê os números do próprio negócio e responde perguntas, prevê tendências e sugere decisões. Os sistemas para Windows funcionam offline (os dados ficam no computador do cliente); KitGest e BemTeVi são aplicativos web (celular e PC). Licença anual de preço fixo e teste grátis. Site oficial: https://softia.app.br
 
 ## O que diferencia a SoftIA
 
-- **Gestão + IA no mesmo programa:** não é planilha nem chatbot solto. O sistema já gerencia o negócio (clientes, vendas, estoque, financeiro) e a IA lê esses dados reais para responder, analisar e recomendar.
-- **Offline e privado:** roda no computador do cliente, funciona sem internet e faz backup automático. Os dados não ficam presos em nuvem de terceiros.
+- **Gestão + IA no mesmo programa:** não é planilha nem chatbot solto. O sistema já gerencia o negócio (clientes, vendas, estoque, financeiro, atendimento) e a IA lê esses dados reais para responder, analisar e recomendar.
+- **Offline e privado (apps Windows):** rodam no computador do cliente, funcionam sem internet e fazem backup automático. Os dados não ficam presos em nuvem de terceiros.
 - **Preço fixo previsível:** licença anual, sem cobrança por usuário ou por cliente cadastrado (ilimitados).
 - **Feito sob medida por setor:** cada produto é especializado no vocabulário e na rotina do seu ramo.
 - **Suporte próximo:** instalação, treinamento e atendimento pelo WhatsApp.
 
 ## Produtos
 
-- [GymGest — gestão para academias e estúdios](https://softia.app.br/gymgest/): Sistema para academias de musculação, estúdios de pilates/treino, boxes de crossfit e personal trainers. Faz cadastro de alunos, matrículas e planos, agenda de aulas, treinos com mapa muscular, avaliação física, controle de frequência, financeiro e WhatsApp integrado. A IA monta treinos, prevê evasão de alunos e analisa a saúde financeira. Licença anual (R$ 790 à vista ou 12x de R$ 75), alunos ilimitados, teste grátis de 14 dias.
+- [GymGest — gestão para academias e estúdios](https://softia.app.br/gymgest/): Sistema para academias de musculação, estúdios de pilates/treino, boxes de crossfit e personal trainers. Faz cadastro de alunos, matrículas e planos, agenda de aulas, treinos com mapa muscular, avaliação física, controle de frequência, financeiro e WhatsApp integrado. A IA monta treinos, prevê evasão de alunos e analisa a saúde financeira. Licença anual (R$ 790 à vista ou 12x de R$ 75), alunos ilimitados, teste grátis de 14 dias. Windows, offline.
 - [AquaGest — gestão para lojas de piscina](https://softia.app.br/aquagest/): Sistema para lojas de piscina e empresas de manutenção/tratamento de piscinas. Reúne CRM, WhatsApp e e-mail, orçamentos, vendas, estoque, financeiro e emissão de nota fiscal (NF-e) num programa só. A IA lê o histórico de clientes e vendas para responder sobre o negócio e apoiar decisões. Windows, offline, teste grátis de 14 dias.
 - [FitGest — gestão para moda fitness (consignação e varejo)](https://softia.app.br/fitgest/): Sistema para distribuidoras e lojas de moda fitness que trabalham com consignação e/ou varejo. Controla parceiras/consultoras, peças consignadas, acerto e comissão calculados automaticamente, PDV, estoque e financeiro. WhatsApp e IA escrevem as mensagens e leem o desempenho do negócio. Windows, offline, teste grátis de 14 dias.
 - [IADent — gestão para consultórios e clínicas odontológicas](https://softia.app.br/iadent/): Sistema para dentistas, consultórios e clínicas odontológicas. Reúne agenda com confirmação automática, prontuário eletrônico e anamnese, odontograma e periograma por face do dente, plano de tratamento na arcada anatômica, receituário e documentos digitais (gera o PDF na hora; assina na tela/tablet, impresso ou pela assinatura oficial gov.br/ICP-Brasil, com validade jurídica), contratos e TCLE, convênios e guias, financeiro, WhatsApp e IA num programa só. A IA lê a agenda, os pacientes e o financeiro reais para responder sobre o consultório e apoiar decisões. Windows, offline, teste grátis de 14 dias. Planos anuais: Consultório (1 dentista + recepção, R$ 1.200 à vista ou 12x de R$ 110) e Clínica (2+ dentistas + recepção em rede, R$ 1.700 à vista ou 12x de R$ 160).
-- [Sabiá — tutor de estudos por IA](https://softia.app.br/sabia/): Tutor particular por Inteligência Artificial que aprende do material do próprio aluno. A pessoa anexa apostilas, livros e PDFs e o Sabiá explica com base nesse conteúdo, cria exercícios, corrige e gera resumos e simulados. Funciona no computador e no celular. Download grátis por 7 dias — instala como aplicativo (Android, iPhone e PC) ou baixa o APK para Android em https://softia.app.br/sabia/ (o app em si abre em https://sabia-app.netlify.app).
+- [AtendeGest — central de atendimento com WhatsApp, e-mail e IA](https://softia.app.br/atendegest/): Sistema de atendimento e relacionamento que reúne WhatsApp e e-mail numa caixa de entrada unificada, com tickets e SLA, CSAT, base de conhecimento, comunicação interna da equipe (mural, agenda, anotações), motor de rotinas/automações e multiusuário por área. A IA resume conversas, classifica assuntos e rascunha respostas ancorada na base do cliente; também tem recepção virtual que tria e distribui contatos. Traz "envio seguro" anti-bloqueio (respeita opt-in e janela de 24h, limita o volume por hora) e conecta ao canal oficial da Meta (WhatsApp Cloud API). Windows, licença anual, implantação assistida (instalação, treinamento e suporte) — solicitação e demonstração pelo WhatsApp.
+- [KitGest — gestão de kitnets e aluguéis](https://softia.app.br/kitgest/): Aplicativo web (celular e PC) para quem administra kitnets, quartos e imóveis alugados. Controla casas e quartos, contratos e inquilinos, composição do aluguel por rateio de despesas, recebimento com recibo e PIX, vistoria de entrada/saída com checklist, fotos, assinatura e laudo em PDF, acerto de saída (caução − danos), manutenção e relatórios (ocupação, rent roll, inadimplência, margem). Funciona offline no celular (fila de sincronização). Teste grátis de 14 dias.
+- [BemTeVi — tutor de estudos por IA](https://bemtevi-app.netlify.app): Tutor particular por Inteligência Artificial que aprende do material do próprio aluno. A pessoa anexa apostilas, livros e PDFs e o BemTeVi explica com base nesse conteúdo, cria exercícios, corrige e gera resumos e simulados. É gamificado (mascote pássaro, jornada, conquistas) e funciona no computador e no celular. Abre direto no navegador (PWA instalável em Android, iPhone e PC) em https://bemtevi-app.netlify.app; também há instalador para Windows em https://github.com/regimneves/bemtevi/releases/latest. (BemTeVi é o novo nome do produto antes chamado Sabiá.)
 
 ## Para quem é (perguntas comuns)
 
@@ -24,10 +26,12 @@
 - "Software para loja de piscina com NF-e e IA?" → AquaGest.
 - "Sistema para consignação de moda fitness / roupa fitness?" → FitGest.
 - "Software para consultório/clínica odontológica com prontuário, odontograma e receita digital?" → IADent.
-- "App/tutor de IA que estuda pelo meu material?" → Sabiá.
+- "CRM de atendimento com WhatsApp, e-mail, tickets e IA?" → AtendeGest.
+- "Sistema para administrar kitnets/aluguel com recibo, PIX e vistoria?" → KitGest.
+- "App/tutor de IA que estuda pelo meu material?" → BemTeVi.
 
 ## Contato
 
 - WhatsApp de vendas: +55 34 98408-1020 — https://wa.me/5534984081020
 - Site: https://softia.app.br
-- Plataforma: Windows 10 e 11 (Sabiá também no celular e navegador). Idioma: Português (Brasil). Atende clientes no Brasil.
+- Plataforma: Windows 10 e 11 (apps de gestão); KitGest e BemTeVi também no celular e no navegador. Idioma: Português (Brasil). Atende clientes no Brasil.
