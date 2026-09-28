@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Proposta do sistema PrataGest (SoftIA) com Gerente Parceiro, personalizada para a joalheria D'Prata.">
+<meta property="og:title" content="PrataGest · Proposta para a D'Prata">
+<meta property="og:description" content="Gestão de joalheria de prata com um vendedor sênior no seu ouvido.">
+<meta property="og:type" content="website">
+<title>PrataGest · SoftIA — Proposta para a D'Prata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#23272f;
+  --ink-soft:#5a606c;
+  --graphite:#3c424e;
+  --silver:#c9ccd4;
+  --silver-lite:#eef0f4;
+  --platinum:#f6f7f9;
+  --line:#dfe2e8;
+  --rose:#b76e79;
+  --rose-soft:#e7c9cd;
+  --rose-tint:#fbf1f2;
+  --champ:#b8935a;
+  --ok:#2f9e6f;
+  --warn:#d98a2b;
+  --alert:#c0532f;
+  --shadow:0 10px 34px rgba(60,66,78,.10);
+  --shadow-lg:0 24px 64px rgba(60,66,78,.18);
+  --metal:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%),linear-gradient(158deg,#f4f5f8 0%,#e6e9ef 42%,#d3d7df 74%,#c7cbd4 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);background:var(--platinum);line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:.2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose)}
+.muted{color:var(--ink-soft)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(242,244,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink)}
+.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#f2f4f8,#b8bec9 55%,#8a909c);display:grid;place-items:center;box-shadow:inset 0 1px 2px rgba(255,255,255,.85),0 3px 9px rgba(60,66,78,.28)}
+.logo span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;color:#3a3f48}
+.brand b{font-weight:800;font-size:16px;letter-spacing:.5px}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--ink-soft);text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:#4a505b;text-decoration:none;font-size:13.5px;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--rose);color:#fff;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* HERO */
+.hero{background:var(--metal);color:var(--ink);padding:78px 0 92px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero h1{font-size:56px;line-height:1.02;font-weight:700;margin:16px 0 18px;color:var(--ink)}
+.shine{background:linear-gradient(92deg,var(--rose),#c98b93 42%,var(--champ));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:18px;color:var(--ink-soft);max-width:560px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{background:rgba(255,255,255,.7);border:1px solid var(--line);padding:8px 14px;border-radius:100px;font-size:13px;color:#3d434e;font-weight:500}
+.hero-cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;padding:13px 22px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.btn-primary{background:var(--rose);color:#fff}
+.btn-primary:hover{background:#a35b66;transform:translateY(-1px)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:#f0f1f4}
+
+/* HERO MOCK CARD */
+.mock{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);padding:20px;color:var(--ink)}
+.mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mock-head b{font-size:13px}
+.dot3{display:flex;gap:5px}.dot3 i{width:9px;height:9px;border-radius:50%}
+.mini{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 14px;margin-bottom:10px;box-shadow:0 4px 14px rgba(60,66,78,.05)}
+.gp-badge{display:inline-flex;align-items:center;gap:6px;background:var(--rose-tint);color:var(--rose);font-size:11px;font-weight:700;padding:4px 9px;border-radius:100px;border:1px solid var(--rose-soft)}
+.mini h4{font-family:'Inter';font-size:14.5px;font-weight:700;margin:8px 0 4px}
+.mini p{font-size:12.5px;color:var(--ink-soft)}
+.msg-box{background:#eafaf0;border:1px solid #bfe6cf;border-radius:10px;padding:10px 12px;margin-top:9px;font-size:12.5px;color:#1e5a3d}
+.msg-box .wa{font-weight:700;color:var(--ok);font-size:11px;display:block;margin-bottom:3px}
+
+/* SECTION */
+section{padding:76px 0}
+.sec-head{text-align:center;max-width:730px;margin:0 auto 46px}
+.sec-head h2{font-size:40px;font-weight:700;margin:12px 0}
+.sec-head p{font-size:16.5px;color:var(--ink-soft)}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* PROBLEM/SOLUTION */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+.card.good{background:var(--rose-tint);border:1.5px solid var(--rose-soft)}
+.card h3{font-size:24px;margin-bottom:14px}
+.card.good h3{color:var(--rose)}
+.tick{display:flex;gap:12px;margin:12px 0;font-size:14.5px}
+.tick .i{flex:0 0 24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:13px;font-weight:800}
+.i-bad{background:#fbe6df;color:var(--alert)}
+.i-good{background:rgba(47,158,111,.16);color:#1f7d54}
+
+/* FEATURE GRID */
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);transition:.25s}
+.feat:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.feat .ic{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--silver-lite),#d3d7df);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.feat h3{font-size:21px;margin-bottom:8px}
+.feat p{font-size:14px;color:var(--ink-soft)}
+
+/* GERENTE PARCEIRO SHOWCASE */
+.gp{background:var(--metal);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gp-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start}
+.gp-how{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;position:sticky;top:84px;box-shadow:var(--shadow)}
+.gp-step{display:flex;gap:14px;margin-bottom:20px}
+.gp-step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
+.gp-step h4{font-family:'Inter';font-size:15px;font-weight:700;margin-bottom:3px}
+.gp-step p{font-size:13px;color:var(--ink-soft)}
+.gp-key{margin-top:6px;padding:14px;border-radius:12px;background:var(--rose-tint);border:1px solid var(--rose-soft);font-size:13px;color:#8a4550}
+
+.feed{display:flex;flex-direction:column;gap:14px}
+.signal{background:#fff;color:var(--ink);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-lg);border-left:5px solid var(--silver)}
+.signal.p-alert{border-left-color:var(--alert)}
+.signal.p-warn{border-left-color:var(--warn)}
+.signal.p-ok{border-left-color:var(--ok)}
+.signal.p-vip{border-left-color:var(--champ)}
+.sig-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+.tag{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:4px 9px;border-radius:6px}
+.t-alert{background:#fbe6df;color:var(--alert)}
+.t-warn{background:#fbeeda;color:#a5641a}
+.t-ok{background:#dff5ea;color:#1f7d54}
+.t-vip{background:#f6ecd3;color:#8a6a1f}
+.sig-when{font-size:11.5px;color:#9096a2;font-weight:600;white-space:nowrap}
+.signal h4{font-family:'Inter';font-size:16px;font-weight:700;margin-bottom:6px}
+.sig-detect{font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sig-detect b{color:var(--ink)}
+.free-tag{display:inline-block;font-size:10.5px;font-weight:700;color:#1f7d54;background:#dff5ea;padding:2px 7px;border-radius:5px;margin-left:4px}
+.wa-msg{background:#f0faf4;border:1px solid #c7e9d5;border-radius:11px;padding:12px 14px;margin-top:11px}
+.wa-msg .wa-h{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;color:var(--ok);margin-bottom:5px}
+.wa-msg p{font-size:13.5px;color:#234;line-height:1.5}
+.sig-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.act{font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:inherit;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.act:hover{background:#f5f6f9}
+.act.send{background:var(--ok);color:#fff;border-color:var(--ok)}
+.act.send:hover{background:#268a5f}
+
+/* DASHBOARD MOCK */
+.dash{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden}
+.dash-bar{background:linear-gradient(90deg,#e4e7ed,#d3d7df);color:var(--ink);padding:14px 22px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.dash-bar b{font-size:14px}
+.dash-body{padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{background:var(--platinum);border:1px solid var(--line);border-radius:13px;padding:16px}
+.kpi .k-lbl{font-size:11.5px;color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.kpi .k-val{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;margin-top:4px}
+.kpi .k-sub{font-size:12px;font-weight:600}
+.k-up{color:var(--ok)}.k-down{color:var(--alert)}
+.dash-row{padding:0 24px 24px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.panel{background:var(--platinum);border:1px solid var(--line);border-radius:13px;padding:18px}
+.panel h4{font-family:'Inter';font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink-soft);margin-bottom:12px}
+.bar-item{display:flex;align-items:center;gap:10px;margin-bottom:11px;font-size:13px}
+.bar-item .nm{flex:0 0 96px;font-weight:600}
+.bar-track{flex:1;height:9px;background:#e4e6ec;border-radius:100px;overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--rose),var(--champ))}
+.cot{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.cot .big{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700}
+
+/* CONSIGN TABLE */
+.tbl-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--platinum);text-align:left;padding:13px 18px;font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink-soft);font-weight:700;border-bottom:1px solid var(--line)}
+td{padding:13px 18px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+.st{font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.s-ok{background:#dff5ea;color:#1f7d54}.s-warn{background:#fbeeda;color:#a5641a}.s-late{background:#fbe6df;color:var(--alert)}
+
+/* MARKETPLACE */
+.lane-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:34px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px}
+.lane{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);position:relative}
+.lane .lane-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:5px 11px;border-radius:100px;margin-bottom:12px}
+.lane-a .lane-tag{background:#eaf1fb;color:#2d5fa5}
+.lane-b .lane-tag{background:var(--rose-tint);color:var(--rose);border:1px solid var(--rose-soft)}
+.lane h3{font-size:23px;margin-bottom:6px}
+.lane p.sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px}
+.lane .step{display:flex;gap:10px;font-size:13.5px;margin:9px 0}
+.lane .step b{color:var(--ink)}
+.lane .dotn{flex:0 0 22px;height:22px;border-radius:50%;background:var(--platinum);border:1px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--ink-soft)}
+.lane-foot{margin-top:14px;padding:11px 13px;border-radius:10px;font-size:12.5px;font-weight:600}
+.lane-a .lane-foot{background:#eaf1fb;color:#2d5fa5}
+.lane-b .lane-foot{background:var(--rose-tint);color:var(--rose)}
+.channels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.chan{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px;text-align:center;box-shadow:var(--shadow);transition:.2s}
+.chan:hover{transform:translateY(-3px)}
+.chan .ci{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin:0 auto 9px;font-size:20px;color:#fff;font-weight:800}
+.chan b{font-size:14px;display:block}
+.chan small{font-size:11.5px;color:var(--ink-soft)}
+.flow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+.flow-node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow);text-align:center;min-width:128px}
+.flow-node small{display:block;font-weight:500;color:var(--ink-soft);font-size:11.5px}
+.arrow{color:var(--rose);font-size:22px;font-weight:800}
+.note-card{background:#fff;border:1px dashed var(--rose-soft);border-radius:14px;padding:18px 22px;margin-top:30px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.note-card .ni{flex:0 0 30px;font-size:22px}
+.note-card p{font-size:13.5px;color:var(--ink-soft)}
+.note-card b{color:var(--ink)}
+
+/* JOURNEY */
+.journey{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.jstep{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);position:relative}
+.jstep .num{position:absolute;top:-14px;left:24px;width:34px;height:34px;background:var(--rose);color:#fff;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:15px;box-shadow:var(--shadow)}
+.jstep h3{font-size:20px;margin:12px 0 8px}
+.jstep p{font-size:13.5px;color:var(--ink-soft)}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch;max-width:820px;margin:0 auto}
+.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.plan.feat-plan{border:2px solid var(--rose);box-shadow:var(--shadow-lg);position:relative}
+.plan.feat-plan:before{content:"Mais completo";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;white-space:nowrap}
+.plan h3{font-size:24px}
+.plan .pr{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700;margin:10px 0 0}
+.plan .pr small{font-size:15px;font-weight:600;color:var(--ink-soft);font-family:'Inter'}
+.plan .parc{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-bottom:6px}
+.plan ul{list-style:none;margin:16px 0;flex:1}
+.plan li{font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:9px}
+.plan li:before{content:"✓";color:var(--ok);font-weight:800}
+.plan .sub-note{font-size:12px;color:var(--ink-soft);background:var(--platinum);border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin-bottom:14px}
+.note{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* CTA FINAL */
+.final{background:var(--metal);color:var(--ink);text-align:center;border-top:1px solid var(--line)}
+.final h2{font-size:44px;color:var(--ink);margin-bottom:14px}
+.final p{font-size:17px;color:var(--ink-soft);max-width:600px;margin:0 auto 28px}
+
+footer{background:#e6e9ef;color:var(--ink-soft);padding:30px 0;text-align:center;font-size:13px;border-top:1px solid var(--line)}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(40px);background:var(--graphite);color:#fff;padding:14px 22px;border-radius:12px;box-shadow:var(--shadow-lg);font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.3s;z-index:100;display:flex;align-items:center;gap:10px}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:920px){
+  .hero-grid,.cols,.gp-layout,.dash-row,.lane-grid,.price-grid{grid-template-columns:1fr}
+  .fgrid,.journey,.dash-body,.channels,.trio{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:42px}.sec-head h2{font-size:32px}
+  .gp-how{position:static}
+}
+@media(max-width:560px){
+  .fgrid,.journey,.dash-body,.channels,.cols,.trio{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo"><span>P</span></div>
+      <div><b>PrataGest</b><small>by SoftIA</small></div>
+    </div>
+    <div class="nav-links">
+      <a href="#gerente">Gerente Parceiro</a>
+      <a href="#sistema">O Sistema</a>
+      <a href="#consignacao">Revendedoras</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#planos">Planos</a>
+    </div>
+    <a href="#planos" class="nav-cta">Quero conhecer</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Proposta exclusiva · D'Prata Joalheria</div>
+      <h1>A D'Prata com <span class="shine">um vendedor sênior</span> no seu ouvido.</h1>
+      <p class="lead">Controle de peças, banho, gramas e cotação da prata, revendedoras com maleta, atendimento no WhatsApp e venda em marketplace — tudo num só lugar. E o <b>Gerente Parceiro</b> avisa você <b>quem chamar hoje e o que dizer</b>.</p>
+      <div class="hero-badges">
+        <span class="pill">💍 Estoque por peça, grama e banho</span>
+        <span class="pill">👜 Revendedoras / maleta</span>
+        <span class="pill">💬 WhatsApp + Loja física</span>
+        <span class="pill">🛒 Página de vendas + Mercado Livre</span>
+        <span class="pill">🧾 NF-e / NFC-e integrada</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#gerente" class="btn btn-primary">Ver o Gerente Parceiro em ação →</a>
+        <a href="#marketplace" class="btn btn-ghost">Como vender em marketplace</a>
+      </div>
+    </div>
+    <div class="mock">
+      <div class="mock-head">
+        <b>Gerente Parceiro · hoje</b>
+        <div class="dot3"><i style="background:#e0574a"></i><i style="background:#e7a93b"></i><i style="background:#3fb27f"></i></div>
+      </div>
+      <div class="mini">
+        <span class="gp-badge">◆ Oportunidade detectada</span>
+        <h4>Marina comprou brincos 925 há 3 meses e sumiu</h4>
+        <p>Costuma voltar a cada 60 dias. Sugestão: oferecer o colar do mesmo conjunto.</p>
+        <div class="msg-box"><span class="wa">✆ Mensagem pronta (WhatsApp)</span>Oi Marina! Chegou o colar que combina com aqueles brincos de prata que você levou 💫 Separei um pra você ver, posso mandar a foto?</div>
+      </div>
+      <div class="mini">
+        <span class="gp-badge">🎂 Data especial em 5 dias</span>
+        <h4>Aniversário da esposa do cliente Roberto</h4>
+        <p>Ele já comprou presente aqui antes. Sugerir pulseira de prata na faixa de R$ 180–260.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM / SOLUTION -->
+<section id="sistema">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Por que uma joalheria de prata precisa disso</div>
+      <h2>A venda de prata não acaba no balcão — ela recomeça</h2>
+      <p>Quem compra uma joia volta: troca de banho, presente de data, conjunto que faltou. O problema é lembrar de tudo isso no meio da correria. O PrataGest lembra por você.</p>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <h3>Como é hoje, sem sistema</h3>
+        <div class="tick"><div class="i i-bad">✕</div><div>Caderninho e planilha: você não sabe quanto tem em prata parada na vitrine nem na maleta das revendedoras.</div></div>
+        <div class="tick"><div class="i i-bad">✕</div><div>Cliente compra e some. Ninguém liga, ninguém oferece o conjunto, o aniversário passa batido.</div></div>
+        <div class="tick"><div class="i i-bad">✕</div><div>A prata subiu de preço e metade das peças continua na etiqueta antiga — margem indo embora.</div></div>
+        <div class="tick"><div class="i i-bad">✕</div><div>Vende só pra quem entra na loja ou chama no WhatsApp. Marketplace? "Depois eu vejo."</div></div>
+      </div>
+      <div class="card good">
+        <h3>Com o PrataGest + Gerente Parceiro</h3>
+        <div class="tick"><div class="i i-good">✓</div><div>Cada peça catalogada com código, grama, banho, custo e margem. Vitrine e maleta batendo em tempo real.</div></div>
+        <div class="tick"><div class="i i-good">✓</div><div>O sistema avisa <b>quem chamar hoje</b> — recompra, data especial, cliente VIP — com a mensagem já escrita no seu tom.</div></div>
+        <div class="tick"><div class="i i-good">✓</div><div>Cotação da prata subiu? Ele lista as peças abaixo da margem e sugere o novo preço num clique.</div></div>
+        <div class="tick"><div class="i i-good">✓</div><div>Sua página de vendas, o Mercado Livre e a nota fiscal — <b>tudo dentro do mesmo sistema</b>, sem depender de mais ninguém.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GERENTE PARCEIRO -->
+<section id="gerente" class="gp">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">O diferencial</div>
+      <h2>Conheça o Gerente Parceiro</h2>
+      <p>Não é um robô que dispara mensagem pra todo mundo. É um gerente de vendas experiente que <b>olha os seus dados</b>, entende o momento de cada cliente e te entrega a próxima jogada, prontinha. Você decide e envia.</p>
+    </div>
+
+    <div class="gp-layout">
+      <!-- HOW IT WORKS -->
+      <div class="gp-how">
+        <h3 style="font-size:22px;margin-bottom:20px">Como ele trabalha</h3>
+        <div class="gp-step">
+          <div class="n">1</div>
+          <div><h4>Detecta (de graça)</h4><p>Lê o seu movimento — vendas, datas, estoque, maleta, cotação — direto no seu computador. Não gasta nada, não depende de internet.</p></div>
+        </div>
+        <div class="gp-step">
+          <div class="n">2</div>
+          <div><h4>Prioriza como gente</h4><p>Não repete a mesma coisa 15× por dia. Escolhe o que vale a ligação de hoje: quem está para recomprar, a data que se aproxima, a peça parada, a cliente VIP.</p></div>
+        </div>
+        <div class="gp-step">
+          <div class="n">3</div>
+          <div><h4>Escreve pra você</h4><p>Só aqui usa inteligência artificial — pra redigir a mensagem no seu tom, com o nome certo. Você lê, ajusta se quiser, e manda.</p></div>
+        </div>
+        <div class="gp-key">💡 <b>Você no comando:</b> o Gerente sugere, você envia. Nada sai sozinho — sem risco de bloqueio no WhatsApp, sem mensagem robótica.</div>
+      </div>
+
+      <!-- FEED -->
+      <div class="feed">
+        <div class="signal p-alert">
+          <div class="sig-top">
+            <span class="tag t-alert">Risco de perder cliente</span>
+            <span class="sig-when">há 92 dias sem comprar</span>
+          </div>
+          <h4>Marina Costa está sumindo</h4>
+          <p class="sig-detect">Comprou <b>brincos de prata 925</b> (R$ 149) e antes voltava a cada ~60 dias. Já passou do ponto. <span class="free-tag">detecção grátis · SQL local</span></p>
+          <div class="wa-msg">
+            <div class="wa-h">✆ Mensagem pronta</div>
+            <p>Oi, Marina! 💫 Chegou o colar que fecha o conjunto daqueles brincos de prata que você amou. Separei um pra você — quer que eu mande a foto?</p>
+          </div>
+          <div class="sig-actions">
+            <button class="act send" onclick="toast('Abrindo conversa da Marina no WhatsApp…')">✆ Enviar no WhatsApp</button>
+            <button class="act" onclick="toast('Mensagem copiada!')">⧉ Copiar</button>
+            <button class="act" onclick="toast('Dispensado. Não aparece de novo hoje.')">Depois</button>
+          </div>
+        </div>
+
+        <div class="signal p-warn">
+          <div class="sig-top">
+            <span class="tag t-warn">Data especial · 5 dias</span>
+            <span class="sig-when">Dia 03/10</span>
+          </div>
+          <h4>Aniversário da esposa do Roberto</h4>
+          <p class="sig-detect">Roberto já comprou presente aqui em 2 datas. Ticket médio dele: <b>R$ 220</b>. Sugestão: pulseira de prata + pingente de coração. <span class="free-tag">detecção grátis</span></p>
+          <div class="wa-msg">
+            <div class="wa-h">✆ Mensagem pronta</div>
+            <p>Roberto, tudo bem? 🎁 Vi que o aniversário da Camila está chegando. Separei 3 opções em prata que ela vai amar, do jeitinho que você gosta de presentear. Passo aqui pra te mostrar?</p>
+          </div>
+          <div class="sig-actions">
+            <button class="act send" onclick="toast('Abrindo conversa do Roberto no WhatsApp…')">✆ Enviar no WhatsApp</button>
+            <button class="act" onclick="toast('Mensagem copiada!')">⧉ Copiar</button>
+            <button class="act" onclick="toast('Lembrete criado para amanhã.')">🔔 Lembrar depois</button>
+          </div>
+        </div>
+
+        <div class="signal p-vip">
+          <div class="sig-top">
+            <span class="tag t-vip">Cliente VIP</span>
+            <span class="sig-when">4ª compra no ano</span>
+          </div>
+          <h4>Letícia já investiu R$ 5.180 em prata este ano</h4>
+          <p class="sig-detect">Suas melhores clientes merecem tratamento diferente. Sugestão: brinde exclusivo ou acesso antecipado à coleção nova. <span class="free-tag">detecção grátis</span></p>
+          <div class="wa-msg">
+            <div class="wa-h">✆ Mensagem pronta</div>
+            <p>Letícia, você é uma das clientes mais especiais da D'Prata 💎 A coleção nova chega semana que vem e quero que você veja antes de todo mundo. Preparei um mimo pra você. Que dia posso te reservar um horário?</p>
+          </div>
+          <div class="sig-actions">
+            <button class="act send" onclick="toast('Abrindo conversa da Letícia no WhatsApp…')">✆ Enviar no WhatsApp</button>
+            <button class="act" onclick="toast('Mensagem copiada!')">⧉ Copiar</button>
+          </div>
+        </div>
+
+        <div class="signal p-warn">
+          <div class="sig-top">
+            <span class="tag t-warn">Peça parada</span>
+            <span class="sig-when">há 118 dias na vitrine</span>
+          </div>
+          <h4>Pulseira Veneziana 60cm não gira</h4>
+          <p class="sig-detect">2 unidades paradas, R$ 380 de prata parada. Sugestão: enviar na maleta da <b>Ana</b> (vende bem pulseira) ou criar oferta relâmpago. <span class="free-tag">detecção grátis</span></p>
+          <div class="sig-actions">
+            <button class="act" onclick="toast('Peça marcada para a próxima maleta da Ana.')">👜 Mandar pra revendedora</button>
+            <button class="act" onclick="toast('Oferta criada para a página de vendas e o Mercado Livre.')">🏷️ Criar oferta</button>
+          </div>
+        </div>
+
+        <div class="signal p-alert">
+          <div class="sig-top">
+            <span class="tag t-alert">Cotação da prata subiu</span>
+            <span class="sig-when">+8,2% no mês</span>
+          </div>
+          <h4>23 peças estão abaixo da sua margem</h4>
+          <p class="sig-detect">A grama da prata subiu e essas peças ainda estão no preço antigo. O sistema já calculou o novo preço sugerido de cada uma. <span class="free-tag">detecção grátis</span></p>
+          <div class="sig-actions">
+            <button class="act send" onclick="toast('23 peças reprecificadas. Página de vendas e Mercado Livre atualizados.')">↻ Reprecificar tudo</button>
+            <button class="act" onclick="toast('Abrindo lista das 23 peças…')">Ver lista</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Painel do dia</div>
+      <h2>Tudo o que importa numa olhada</h2>
+      <p>Abriu o sistema de manhã, você já sabe como está a loja, a prata e as revendedoras.</p>
+    </div>
+    <div class="dash">
+      <div class="dash-bar">
+        <b>◆ D'Prata · Painel de hoje</b>
+        <span style="font-size:12.5px;color:var(--ink-soft)">Segunda, 28/09 · atualizado agora</span>
+      </div>
+      <div class="dash-body">
+        <div class="kpi"><div class="k-lbl">Vendas hoje</div><div class="k-val">R$ 1.840</div><div class="k-sub k-up">▲ 12% vs. média</div></div>
+        <div class="kpi"><div class="k-lbl">Peças vendidas</div><div class="k-val">14</div><div class="k-sub k-up">▲ 3 conjuntos</div></div>
+        <div class="kpi"><div class="k-lbl">Ticket médio</div><div class="k-val">R$ 131</div><div class="k-sub k-up">▲ R$ 9</div></div>
+        <div class="kpi"><div class="k-lbl">Prata em estoque</div><div class="k-val">2,1 kg</div><div class="k-sub muted">≈ R$ 18.400</div></div>
+      </div>
+      <div class="dash-row">
+        <div class="panel">
+          <h4>Categorias que mais giram</h4>
+          <div class="bar-item"><span class="nm">Brincos</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><b>88</b></div>
+          <div class="bar-item"><span class="nm">Colares</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><b>64</b></div>
+          <div class="bar-item"><span class="nm">Anéis</span><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div><b>52</b></div>
+          <div class="bar-item"><span class="nm">Pulseiras</span><div class="bar-track"><div class="bar-fill" style="width:41%"></div></div><b>41</b></div>
+          <div class="bar-item"><span class="nm">Pingentes</span><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div><b>33</b></div>
+        </div>
+        <div class="panel">
+          <h4>Cotação da prata (g)</h4>
+          <div class="cot"><span class="big">R$ 8,76</span><span class="k-up" style="font-weight:700;font-size:13px">▲ 8,2%</span></div>
+          <p class="muted" style="font-size:12.5px">O Gerente já sinalizou 23 peças p/ reprecificar.</p>
+          <hr style="border:none;border-top:1px solid var(--line);margin:14px 0">
+          <h4>Gerente Parceiro</h4>
+          <p style="font-size:13.5px"><b style="color:var(--rose)">6 oportunidades</b> esperando você hoje. Estimativa: <b>+R$ 940</b> em vendas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">O que o sistema faz</div>
+      <h2>Feito para o dia a dia da prata</h2>
+      <p>Base do sistema Softia — o mesmo motor que já roda em outras lojas — adaptado peça por peça para a D'Prata.</p>
+    </div>
+    <div class="fgrid">
+      <div class="feat"><div class="ic">💍</div><h3>Estoque por peça</h3><p>Código, foto, categoria, grama de prata, tipo de banho (ródio/ouro), custo, margem e localização (vitrine/maleta). Sabe na hora o que tem e onde.</p></div>
+      <div class="feat"><div class="ic">⚖️</div><h3>Preço pela cotação</h3><p>Preço sugerido calculado pela grama + margem. Prata subiu? Reprecifica em bloco e atualiza a página de vendas e o Mercado Livre juntos.</p></div>
+      <div class="feat"><div class="ic">👜</div><h3>Revendedoras &amp; maleta</h3><p>Consignação completa: o que cada revendedora levou, o que vendeu, o que deve acertar e a comissão. Herdado do FitGest.</p></div>
+      <div class="feat"><div class="ic">💬</div><h3>Atendimento WhatsApp</h3><p>Histórico da cliente, catálogo pronto pra enviar, e o assistente de IA que ajuda a responder, quebrar objeção e fechar.</p></div>
+      <div class="feat"><div class="ic">🛒</div><h3>Página de vendas + Mercado Livre</h3><p>Vitrine própria com checkout (Pix/cartão) e publicação direta no Mercado Livre — tudo do próprio sistema, sem intermediário.</p></div>
+      <div class="feat"><div class="ic">🧾</div><h3>Nota fiscal integrada</h3><p>Emite NFC-e/NF-e na hora da venda, dentro do PrataGest. Infraestrutura fiscal homologada — você não troca de programa pra dar nota.</p></div>
+      <div class="feat"><div class="ic">✨</div><h3>Banho &amp; garantia</h3><p>Controle de renovação de banho e garantia por peça — motivo perfeito pra chamar a cliente de volta.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Relatórios que vendem</h3><p>Curva ABC das peças, o que gira, o que empata dinheiro, e quanto de prata está parada.</p></div>
+      <div class="feat"><div class="ic">🔒</div><h3>Funciona offline</h3><p>Roda no seu computador da loja. A internet só entra quando você quer publicar na vitrine ou enviar mensagem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSIGNAÇÃO -->
+<section id="consignacao" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Reaproveitando o FitGest</div>
+      <h2>Revendedoras com maleta, sob controle</h2>
+      <p>O mesmo motor de consignação que criamos para o distribuidor de roupas fitness — só que agora para maletas de prata. Você sabe cada peça que saiu e quanto tem a receber.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Revendedora</th><th>Peças na maleta</th><th>Valor consignado</th><th>Vendido</th><th>A acertar</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Ana Ribeiro</b></td><td>42 peças</td><td>R$ 3.240</td><td>R$ 1.180</td><td>R$ 1.180</td><td><span class="st s-warn">Acerto em 5 dias</span></td></tr>
+          <tr><td><b>Juliana Melo</b></td><td>28 peças</td><td>R$ 2.100</td><td>R$ 1.640</td><td>R$ 1.640</td><td><span class="st s-ok">Em dia</span></td></tr>
+          <tr><td><b>Patrícia Souza</b></td><td>55 peças</td><td>R$ 4.780</td><td>R$ 620</td><td>R$ 620</td><td><span class="st s-late">45 dias sem acerto</span></td></tr>
+          <tr><td><b>Rafaela Dias</b></td><td>19 peças</td><td>R$ 1.510</td><td>R$ 940</td><td>R$ 940</td><td><span class="st s-ok">Em dia</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:16px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center">
+      <span class="gp-badge" style="flex-shrink:0">◆ Gerente Parceiro</span>
+      <p style="font-size:14px;color:#444">A <b>Patrícia</b> está com maleta há 45 dias sem acerto. Preparei uma cobrança gentil pra você enviar: <i>"Oi Patrícia! Passando pra saber como estão as vendas da maleta 💛 Quer que eu troque as peças que não giraram por modelos novos e a gente acerta o que vendeu?"</i></p>
+    </div>
+  </div>
+</section>
+
+<!-- VENDAS ONLINE -->
+<section id="marketplace">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">O próximo passo do faturamento</div>
+      <h2>Vender online e dar nota — no mesmo sistema</h2>
+      <p>Nada de juntar três programas. A D'Prata cadastra a peça <b>uma vez</b> no PrataGest e ela já vira <b>página de vendas com checkout</b>, <b>anúncio no Mercado Livre</b> e sai com <b>nota fiscal</b>. Um sistema só, sem depender de ninguém.</p>
+    </div>
+
+    <div class="trio">
+      <!-- 1: PÁGINA DE VENDAS -->
+      <div class="lane lane-b">
+        <span class="lane-tag">Página de vendas · 100% sua</span>
+        <h3>Sua loja online com a marca D'Prata</h3>
+        <p class="sub">Gerada do seu estoque, com checkout na própria página.</p>
+        <div class="step"><div class="dotn">1</div><div>A peça vira <b>página de vendas</b> com foto e preço.</div></div>
+        <div class="step"><div class="dotn">2</div><div>Cliente paga na hora: <b>Pix e cartão</b> (checkout transparente).</div></div>
+        <div class="step"><div class="dotn">3</div><div>Link pronto pra mandar no <b>WhatsApp</b> e no Instagram.</div></div>
+        <div class="step"><div class="dotn">4</div><div>Pedido pago <b>cai no PrataGest</b> e baixa o estoque.</div></div>
+        <div class="lane-foot">✓ Sem taxa de marketplace — a margem é sua</div>
+      </div>
+      <!-- 2: MERCADO LIVRE -->
+      <div class="lane lane-a">
+        <span class="lane-tag">Mercado Livre · direto</span>
+        <h3>O maior marketplace, sem intermediário</h3>
+        <p class="sub">Publicação direto do PrataGest, com estoque sincronizado.</p>
+        <div class="step"><div class="dotn">1</div><div>Escolhe a peça e <b>publica o anúncio</b> no Mercado Livre.</div></div>
+        <div class="step"><div class="dotn">2</div><div>Vendeu lá? O <b>pedido volta</b> e o estoque baixa.</div></div>
+        <div class="step"><div class="dotn">3</div><div>Preço mudou? <b>Atualiza os anúncios</b> em bloco.</div></div>
+        <div class="step"><div class="dotn">4</div><div>O <b>Gerente Parceiro</b> traz o comprador pro seu WhatsApp.</div></div>
+        <div class="lane-foot">✓ Integração nossa, API oficial do Mercado Livre</div>
+      </div>
+      <!-- 3: NOTA FISCAL -->
+      <div class="lane" style="border-color:var(--champ)">
+        <span class="lane-tag" style="background:#f6ecd3;color:#8a6a1f;border:1px solid #e6d3a0">Nota fiscal · integrada</span>
+        <h3>Emite a nota sem trocar de programa</h3>
+        <p class="sub">NFC-e no balcão, NF-e quando precisar — dentro do sistema.</p>
+        <div class="step"><div class="dotn">1</div><div>Fechou a venda? A <b>nota sai junto</b>, na hora.</div></div>
+        <div class="step"><div class="dotn">2</div><div>Vale pra <b>loja física, página e Mercado Livre</b>.</div></div>
+        <div class="step"><div class="dotn">3</div><div>Infraestrutura fiscal <b>homologada</b> (sempre em dia com a lei).</div></div>
+        <div class="step"><div class="dotn">4</div><div>Guarda o <b>PDF e a chave</b> de cada nota, organizadinho.</div></div>
+        <div class="lane-foot" style="background:#f6ecd3;color:#8a6a1f">✓ Reforma tributária por nossa conta, não a sua</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-node" style="border-color:var(--rose)">Peça no PrataGest<small>cadastro único</small></div>
+      <span class="arrow">→</span>
+      <div class="flow-node">Loja · ML · Página<small>vende em todo canto</small></div>
+      <span class="arrow">→</span>
+      <div class="flow-node">Vendeu<small>nota sai, estoque baixa</small></div>
+      <span class="arrow">→</span>
+      <div class="flow-node" style="border-color:var(--rose)">Gerente cuida do pós<small>vira cliente da casa</small></div>
+    </div>
+
+    <div class="note-card">
+      <div class="ni">💠</div>
+      <p><b>Tudo num sistema só.</b> A D'Prata não precisa pagar e aprender três ferramentas diferentes pra gestão, marketplace e nota fiscal. O PrataGest reúne isso por dentro, usando infraestrutura já validada no mercado — e sobra pra você o que importa: <b>o Gerente Parceiro colocando cliente na loja e dinheiro no caixa</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Como implantamos</div>
+      <h2>Do jeito que você trabalha hoje, só que melhor</h2>
+    </div>
+    <div class="journey">
+      <div class="jstep"><div class="num">1</div><h3>Cadastramos com você</h3><p>Levamos seu estoque atual pro sistema — com foto, grama e preço. Importamos sua base de clientes do WhatsApp e das vendas.</p></div>
+      <div class="jstep"><div class="num">2</div><h3>Loja e WhatsApp num só lugar</h3><p>Atendimento presencial e por WhatsApp registrando tudo. O Gerente Parceiro já começa a apontar quem chamar.</p></div>
+      <div class="jstep"><div class="num">3</div><h3>Abrimos suas vendas online</h3><p>Subimos sua página de vendas com checkout, publicamos as peças campeãs no Mercado Livre e ligamos a emissão de nota fiscal. Vender online e dar nota — tudo do mesmo sistema.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="planos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Investimento</div>
+      <h2>Licença anual, sem mensalidade que sufoca</h2>
+      <p>Você paga uma vez no ano e o sistema é seu — roda offline, sem depender de nós todo mês.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <h3>Loja Completa</h3>
+        <div class="pr">R$ 790<small> à vista</small></div>
+        <div class="parc">ou 12× de R$ 75 · licença anual</div>
+        <div class="sub-note">Toda a gestão da loja + o vendedor sênior no ouvido + sua página de vendas.</div>
+        <ul>
+          <li>Estoque por peça, grama e banho</li>
+          <li>PDV, clientes e caixa</li>
+          <li>Revendedoras / maleta</li>
+          <li>Preço pela cotação da prata</li>
+          <li><b>Gerente Parceiro completo</b></li>
+          <li>Atendimento WhatsApp + IA</li>
+          <li>Datas especiais &amp; fidelização</li>
+          <li><b>Página de vendas própria</b> (Pix/cartão)</li>
+        </ul>
+        <a href="#contato" class="btn btn-ghost" style="justify-content:center">Falar sobre este</a>
+      </div>
+      <div class="plan feat-plan">
+        <h3>Completo</h3>
+        <div class="pr">R$ 949<small> à vista</small></div>
+        <div class="parc">ou 12× de R$ 90 · licença anual</div>
+        <div class="sub-note">Tudo da Loja Completa + nota fiscal e Mercado Livre no mesmo sistema.</div>
+        <ul>
+          <li>Tudo da <b>Loja Completa</b></li>
+          <li><b>Emissão de NF-e / NFC-e</b> integrada</li>
+          <li><b>Mercado Livre</b> (publica e sincroniza direto)</li>
+          <li>Pedidos online caem no sistema</li>
+          <li>Estoque único: loja + página + Mercado Livre</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary" style="justify-content:center">Quero este</a>
+      </div>
+    </div>
+    <p class="note">Licença anual SoftIA. Parcelamento no cartão. Trial de 14 dias sem compromisso. A emissão fiscal usa infraestrutura homologada (com o certificado digital A1 da loja); eventual custo por nota conforme o volume entra na proposta. Sem mensalidade de sistema.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contato" class="final">
+  <div class="wrap">
+    <div class="eyebrow">Vamos conversar</div>
+    <h2>A prata da D'Prata merece um sistema à altura</h2>
+    <p>Organizar o estoque é o começo. O que muda o faturamento é ter um Gerente Parceiro lembrando você de vender todo dia — e a sua vitrine trabalhando enquanto você dorme.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn btn-primary" onclick="toast('É só uma demonstração 🙂')">Agendar uma demonstração</a>
+      <a href="#gerente" class="btn btn-ghost">Rever o Gerente Parceiro</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  PrataGest · by <b style="color:var(--ink)">SoftIA</b> — Proposta para a <b style="color:var(--ink)">D'Prata Joalheria</b> &nbsp;·&nbsp; Demonstração &nbsp;·&nbsp; softia.app.br
+</footer>
+
+<div class="toast" id="toast"><span>◆</span><span id="toast-msg"></span></div>
+
+<script>
+  var t = document.getElementById('toast'), tm = document.getElementById('toast-msg'), tt;
+  function toast(msg){
+    tm.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(tt);
+    tt = setTimeout(function(){ t.classList.remove('show'); }, 2600);
+  }
+</script>
+</body>
+</html>
