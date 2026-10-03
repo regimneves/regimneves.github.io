@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RepGest — O sistema do representante comercial | Softia</title>
+<meta name="description" content="RepGest: catálogo das suas indústrias com fotos, pedido pelo WhatsApp, comissão por indústria, CRM, e-mail e IA — tudo num programa só para Windows. Funciona offline. Por Softia." />
+<link rel="canonical" href="https://softia.app.br/repgest/" />
+<meta name="author" content="Softia" />
+<link rel="icon" href="img/repgest-icon.png" />
+<meta property="og:title" content="RepGest — O sistema do representante comercial" />
+<meta property="og:description" content="A sua representação inteira num programa só: catálogo com fotos, pedido pelo WhatsApp, comissão e IA. Funciona offline." />
+<meta property="og:image" content="https://softia.app.br/repgest/img/repgest-icon.png" />
+<meta property="og:url" content="https://softia.app.br/repgest/" />
+<meta property="og:type" content="website" />
+<style>
+  :root{
+    --navy:#16324F; --navy2:#0F2439; --laranja:#F97316; --laranja-esc:#EA580C;
+    --tinta:#0F172A; --cinza:#64748B; --borda:#E2E8F0; --papel:#F8FAFC; --branco:#fff; --verde:#25D366; --verde-esc:#128C7E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--branco);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  a{color:inherit;text-decoration:none}
+  .btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:11px;padding:14px 24px;font-size:15.5px;font-weight:700;cursor:pointer;transition:transform .08s,box-shadow .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn svg{width:20px;height:20px}
+  .btn-laranja{background:var(--laranja);color:#fff;box-shadow:0 10px 24px -10px rgba(249,115,22,.7)}
+  .btn-zap{background:var(--verde);color:#fff}
+  .btn-ghost{background:var(--branco);color:var(--navy);border:1.5px solid var(--borda)}
+  .btn-ghost-dark{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--laranja-esc);background:#FFF1E6;border-radius:999px;padding:6px 14px;margin-bottom:16px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:800;color:var(--navy)}
+  .logo img{width:38px;height:38px;border-radius:9px}
+  .logo small{display:block;font-size:11px;font-weight:600;color:var(--cinza);letter-spacing:.04em}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:14.5px;font-weight:600;color:#334155}
+  .nav-links a:hover{color:var(--laranja-esc)}
+  @media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+  /* Hero */
+  .hero{background:linear-gradient(170deg,var(--navy),var(--navy2));color:#fff;padding:64px 0 72px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 340px at 50% -10%,rgba(249,115,22,.22),transparent 70%);pointer-events:none}
+  .hero .eyebrow{background:rgba(249,115,22,.18);color:#FDBA74}
+  .hero h1{font-size:42px;line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
+  .hero h1 .g{color:var(--laranja);background:linear-gradient(90deg,#FB923C,#F97316);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{font-size:18px;color:#CBD5E1;max-width:680px;margin:0 auto 30px}
+  .acoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:#E2E8F0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px}
+  .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--laranja)}
+
+  section.blk{padding:62px 0}
+  .lead{text-align:center;max-width:680px;margin:0 auto 40px}
+  .lead h2{font-size:30px;letter-spacing:-.02em;margin-bottom:10px;color:var(--navy)}
+  .lead p{color:var(--cinza);font-size:16.5px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:18px}
+  .card{background:var(--branco);border:1px solid var(--borda);border-radius:16px;padding:24px}
+  .card .ico{width:44px;height:44px;border-radius:11px;background:#FFF1E6;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px}
+  .card h3{font-size:16.5px;margin-bottom:5px;color:var(--navy)}
+  .card p{font-size:14px;color:var(--cinza)}
+
+  /* Passos */
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:760px){.passos{grid-template-columns:1fr}}
+  .passo{background:var(--papel);border:1px solid var(--borda);border-radius:16px;padding:26px 22px;position:relative}
+  .passo .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .passo h3{font-size:17px;color:var(--navy);margin-bottom:6px}
+  .passo p{font-size:14.5px;color:var(--cinza)}
+
+  /* Preço */
+  .preco-wrap{max-width:520px;margin:0 auto}
+  .plano{border:2px solid var(--laranja);border-radius:22px;padding:34px 30px;background:var(--branco);box-shadow:0 20px 50px -24px rgba(22,50,79,.4);text-align:center;position:relative}
+  .plano .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 16px;border-radius:999px}
+  .plano .preco{font-size:46px;font-weight:900;letter-spacing:-.03em;color:var(--navy);margin:8px 0 2px}
+  .plano .preco small{font-size:.4em;font-weight:700;color:var(--cinza)}
+  .plano .parc{font-size:15px;color:var(--verde-esc);font-weight:800;margin-bottom:18px}
+  .plano ul{list-style:none;text-align:left;display:flex;flex-direction:column;gap:11px;margin:22px 0 24px}
+  .plano li{display:flex;gap:10px;font-size:14.5px;align-items:flex-start}
+  .plano li svg{width:19px;height:19px;color:var(--laranja);flex-shrink:0;margin-top:1px}
+  .indica{margin-top:20px;background:#FFF7ED;border:1px dashed var(--laranja);border-radius:14px;padding:16px 18px;font-size:14px;color:#9A3412}
+  .indica b{color:var(--laranja-esc)}
+
+  /* CTA download */
+  .cta{background:linear-gradient(170deg,var(--navy),var(--navy2));color:#fff;text-align:center;padding:60px 0}
+  .cta h2{font-size:30px;margin-bottom:10px}
+  .cta p{color:#CBD5E1;max-width:560px;margin:0 auto 26px}
+
+  footer{background:var(--papel);border-top:1px solid var(--borda);padding:34px 0;color:var(--cinza);font-size:13.5px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .foot a{font-weight:600}
+  .foot a:hover{color:var(--laranja-esc)}
+  .nota{font-size:12.5px;color:#94A3B8;margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../"><img src="img/repgest-icon.png" alt=""><span>RepGest<small>por Softia</small></span></a>
+    <nav class="nav-links">
+      <a href="#recursos">Recursos</a>
+      <a href="#como">Como funciona</a>
+      <a href="#preco">Preço</a>
+      <a href="#baixar" class="btn btn-laranja" style="padding:10px 18px;font-size:14px">Baixar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Para representantes comerciais</span>
+    <h1>A sua representação inteira<br><span class="g">no seu bolso.</span></h1>
+    <p class="sub">O catálogo das suas indústrias com fotos, o pedido que o cliente monta e devolve pelo WhatsApp, a comissão de cada marca e uma IA que trabalha como seu gerente de vendas — tudo num programa só para Windows. E funciona <b>offline</b>.</p>
+    <div class="acoes">
+      <a href="https://github.com/regimneves/repgest-releases/releases/latest" class="btn btn-laranja">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Baixar o RepGest
+      </a>
+      <a href="Manual-RepGest.pdf" class="btn btn-ghost-dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg>
+        Baixar o manual
+      </a>
+      <a href="https://wa.me/5534984081020?text=Quero%20saber%20mais%20do%20RepGest" class="btn btn-zap">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.8 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span> Várias indústrias num app só</span>
+      <span class="chip"><span class="dot"></span> Catálogo com fotos</span>
+      <span class="chip"><span class="dot"></span> Pedido pelo WhatsApp</span>
+      <span class="chip"><span class="dot"></span> Comissão por indústria</span>
+      <span class="chip"><span class="dot"></span> IA Gerente Parceiro</span>
+      <span class="chip"><span class="dot"></span> Funciona offline</span>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="recursos">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">O que o RepGest faz</span>
+      <h2>Feito para quem representa, não para quem tem loja.</h2>
+      <p>Cada recurso pensado para o dia a dia do representante comercial: várias indústrias, muitos produtos, pedido na rua e comissão no fim do mês.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">🏭</div><h3>Várias indústrias</h3><p>Cadastre quantas representadas quiser, cada uma com sua tabela de preços, frete, faturamento mínimo e comissão.</p></div>
+      <div class="card"><div class="ico">🖼️</div><h3>Catálogo com fotos</h3><p>Produtos ilustrados, busca forte para achar 1 item entre milhares, e importação por PDF, planilha ou do site da indústria.</p></div>
+      <div class="card"><div class="ico">📲</div><h3>Pedido pelo WhatsApp</h3><p>Mande o catálogo por link ou arquivo; o cliente monta o pedido e devolve. Ele cai centralizado no seu RepGest.</p></div>
+      <div class="card"><div class="ico">💰</div><h3>Comissão por indústria</h3><p>Cada marca com seu percentual (e incentivos por linha). Demonstrativo e recibo em PDF, por período.</p></div>
+      <div class="card"><div class="ico">👥</div><h3>Clientes e funil</h3><p>Carteira de clientes com dados de faturamento, funil de vendas e histórico de contato — tudo organizado.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>WhatsApp e e-mail</h3><p>Fale com clientes e indústrias de dentro do programa, com modelos de mensagem prontos para cada momento.</p></div>
+      <div class="card"><div class="ico">🤝</div><h3>Gerente Parceiro (IA)</h3><p>Uma IA que lê a sua carteira e sugere a próxima ação do dia: quem reaproximar, o que repor, onde está a comissão.</p></div>
+      <div class="card"><div class="ico">📊</div><h3>Relatórios do representante</h3><p>Faturamento, pedidos, ticket, produtos que mais giram e ranking de clientes — por indústria e por período.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Seus dados, no seu PC</h3><p>Funciona offline, com backup automático. Licença anual com preço fixo — sem mensalidade por usuário.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="como" style="background:var(--papel);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do escritório ao pedido, em 3 passos.</h2>
+    </div>
+    <div class="passos">
+      <div class="passo"><div class="n">1</div><h3>Monte no escritório</h3><p>Suas indústrias, tabelas e fotos já organizadas. A IA aponta a oferta da semana e quem precisa de um alô.</p></div>
+      <div class="passo"><div class="n">2</div><h3>Envie para o cliente</h3><p>Mande o catálogo por link ou arquivo no WhatsApp. O lojista acha por busca, monta o carrinho e devolve o pedido.</p></div>
+      <div class="passo"><div class="n">3</div><h3>Receba centralizado</h3><p>O pedido chega no RepGest, pronto para faturar com a indústria, com a comissão já calculada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="preco">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Preço</span>
+      <h2>Uma licença anual. Sem mensalidade por usuário.</h2>
+      <p>Você é o dono da sua licença. Preço fixo no ano, sem surpresa no fim do mês.</p>
+    </div>
+    <div class="preco-wrap">
+      <div class="plano">
+        <span class="tag">Licença anual</span>
+        <div class="preco">R$ 790 <small>à vista</small></div>
+        <div class="parc">ou 12x de R$ 75 no cartão</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Todos os recursos, sem limite de indústrias nem de produtos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> WhatsApp, e-mail e IA Gerente Parceiro inclusos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Atualizações automáticas e suporte</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Funciona offline, com backup automático</li>
+        </ul>
+        <a href="#baixar" class="btn btn-laranja" style="width:100%;justify-content:center">Baixar e começar</a>
+        <div class="indica">🎁 <b>Programa de indicação:</b> indique 3 representantes que fecharem e ganhe a <b>anuidade do ano seguinte grátis</b>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="baixar">
+  <div class="wrap">
+    <h2>Baixe o RepGest agora.</h2>
+    <p>Instale no seu computador Windows e já abra com o catálogo pronto. Precisa de ajuda? O manual completo está logo abaixo.</p>
+    <div class="acoes">
+      <a href="https://github.com/regimneves/repgest-releases/releases/latest" class="btn btn-laranja">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Baixar o RepGest (Windows)
+      </a>
+      <a href="Manual-RepGest.pdf" class="btn btn-ghost-dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg>
+        Baixar o manual (PDF)
+      </a>
+    </div>
+    <p class="nota" style="color:#94A3B8;margin-top:18px">Ao instalar, o programa já abre com o catálogo e as fotos. Depois é só preencher o seu WhatsApp e e-mail e ativar a sua licença.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div style="font-weight:800;color:var(--navy)">RepGest · por Softia</div>
+      <div class="nota">O sistema do representante comercial. © 2026 Softia.</div>
+    </div>
+    <div style="display:flex;gap:18px">
+      <a href="../">Outros produtos Softia</a>
+      <a href="https://wa.me/5534984081020?text=Quero%20saber%20mais%20do%20RepGest">Falar com vendas</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
