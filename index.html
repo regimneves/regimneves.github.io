@@ -143,6 +143,19 @@
             "description": "Tutor de estudos por IA que aprende do material do próprio aluno: explica, cria e corrige exercícios e gera resumos e simulados a partir de apostilas, livros e PDFs. Gamificado, com mascote pássaro. No computador e no celular.",
             "publisher": { "@id": "https://softia.app.br/#organizacao" }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "RepGest",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Windows",
+            "url": "https://softia.app.br/repgest/",
+            "description": "Sistema para representantes comerciais: catálogo das indústrias com fotos, pedido pelo WhatsApp, comissão por indústria, CRM e IA Gerente Parceiro. Offline, licença anual.",
+            "publisher": { "@id": "https://softia.app.br/#organizacao" }
+          }
         }
       ]
     }
@@ -172,6 +185,7 @@
   --atende:#0FA98C; --atende-esc:#C7156F;
   --kit:#38BDF8; --kit-esc:#5B54E8;
   --bem:#F5A623; --bem-esc:#C77E0E;
+  --rep:#F97316; --rep-esc:#C2410C;
 
   --radius:18px;
   --sombra:0 1px 2px rgba(10,22,48,.04), 0 12px 30px -18px rgba(10,22,48,.28);
@@ -279,6 +293,7 @@ section{padding:70px 0}
 .prod.fit{--c:var(--fit);--c2:var(--fit-esc)}
 .prod.iadent{--c:var(--iadent);--c2:var(--iadent-esc)}
 .prod.atende{--c:var(--atende);--c2:var(--atende-esc)}
+.prod.rep{--c:var(--rep);--c2:var(--rep-esc)}
 .prod.kit{--c:var(--kit);--c2:var(--kit-esc)}
 .prod.bem{--c:var(--bem);--c2:var(--bem-esc)}
 .prod .badge{display:inline-flex;align-items:center;gap:9px;font-family:'Saira';font-weight:700;letter-spacing:.3px;font-size:12.5px;
@@ -409,7 +424,7 @@ footer .fim{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,2
       <div class="grupo-titulo">
         <h3>Gestão para o seu negócio</h3>
         <span class="ln"></span>
-        <span class="tag">6 sistemas · Windows &amp; web</span>
+        <span class="tag">7 sistemas · Windows &amp; web</span>
       </div>
 
       <div class="produtos">
@@ -433,6 +448,30 @@ footer .fim{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,2
             <a class="btn btn-ghost" href="https://github.com/regimneves/aquagest-releases/releases/latest">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               Baixar · 14 dias grátis
+            </a>
+          </div>
+        </article>
+
+        <!-- RepGest -->
+        <article class="prod rep">
+          <span class="badge"><img src="logos/repgest.png" alt=""> Representantes comerciais</span>
+          <img class="prodlogo" src="logos/repgest.png" alt="RepGest">
+          <h3>RepGest</h3>
+          <div class="tag">O sistema do representante comercial.</div>
+          <p class="desc">O catálogo das suas indústrias com fotos, o pedido que o cliente monta e devolve pelo WhatsApp, a comissão de cada marca e uma IA que trabalha como seu gerente de vendas — tudo num programa só. Funciona offline.</p>
+          <ul>
+            <li>Várias indústrias num app só</li>
+            <li>Catálogo com fotos</li>
+            <li>Pedido pelo WhatsApp</li>
+            <li>Comissão por indústria</li>
+            <li>CRM e funil de vendas</li>
+            <li>IA Gerente Parceiro</li>
+          </ul>
+          <div class="acoes">
+            <a class="btn btn-prod" href="repgest/">Ver o RepGest →</a>
+            <a class="btn btn-ghost" href="https://github.com/regimneves/repgest-releases/releases/latest">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              Baixar
             </a>
           </div>
         </article>
@@ -704,6 +743,7 @@ footer .fim{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,2
       <div class="cols">
         <div class="col">
           <h4>Negócio</h4>
+          <a href="repgest/">RepGest</a>
           <a href="aquagest/">AquaGest</a>
           <a href="gymgest/">GymGest</a>
           <a href="fitgest/">FitGest</a>
